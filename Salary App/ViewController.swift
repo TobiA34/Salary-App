@@ -13,8 +13,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var salarySC: UISegmentedControl!
     
+    @IBOutlet weak var monthlySalaryLbl: UILabel!
+    @IBOutlet weak var weeklySalaryLbl: UILabel!
     // create variable monthly, days, weekly
     
+    @IBOutlet weak var dailySalaryLbl: UILabel!
     
     //Annual salary ÷ 52 = weekly rate
     // (Annual salary ÷ 52)÷ 7.5 = Hourly rate
@@ -55,6 +58,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             self.present(alert, animated: true, completion: nil)
         }
     }
+
     
     
     @IBAction func submitBtnPressed(_ sender: Any) {
@@ -66,22 +70,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
             let salary = Int(self.salaryTextField.text!) ?? 0
             monthlySalary =  salary / 12
             
-            let formattedMonthlySalary = "£ \(String(monthlySalary ?? 0))"
+            let formattedMonthlySalary = " £\(String(monthlySalary ?? 0))"
             
-            let alert = UIAlertController(title: "Monthly Salary", message:formattedMonthlySalary, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "dismiss", style: .default))
-            self.present(alert, animated: true, completion: nil)
-            
+            if salary != 0 {
+                monthlySalaryLbl.text = "This is your monthly salary:\(formattedMonthlySalary)"
+            }
             break
             
         case 1:
             let salary = Int(self.salaryTextField.text!) ?? 0
             dailySalary =  (salary / 52) / Int(7.5)
-            let formattedHourlySalary = "£ \(String(dailySalary ?? 0))"
+            let formattedHourlySalary = " £\(String(dailySalary ?? 0))"
             
-            let alert = UIAlertController(title: "Hourly Salary", message:formattedHourlySalary , preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "dismiss", style: .default))
-            self.present(alert, animated: true, completion: nil)
+            if salary != 0 {
+                dailySalaryLbl.text = "This is your daily salary:\(formattedHourlySalary)"
+            }
             break
             
         case 2:
@@ -89,10 +92,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
             weeklySalary =  (salary / 52)
             defaults.set(weeklySalary, forKey: "weekly")
             
-            let formattedWeeklySalary = "£ \(String(weeklySalary ?? 0))"
-            let alert = UIAlertController(title: "Weekly Salary", message: formattedWeeklySalary, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "dismiss", style: .default))
-            self.present(alert, animated: true, completion: nil)
+            let formattedWeeklySalary = " £\(String(weeklySalary ?? 0))"
+            if salary != 0 {
+                weeklySalaryLbl.text = "This is your weekly salary:\(formattedWeeklySalary)"
+            }
+
             break
             
         default:

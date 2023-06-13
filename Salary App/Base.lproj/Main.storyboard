@@ -44,30 +44,59 @@
                                     <action selector="submitBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TPH-sh-CCE"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="MvT-zZ-4Lz">
+                                <rect key="frame" x="50" y="468" width="293" height="206"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mHJ-1o-2ok">
+                                        <rect key="frame" x="0.0" y="0.0" width="293" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNf-Uu-jRx">
+                                        <rect key="frame" x="0.0" y="78" width="293" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91F-6B-8Rd">
+                                        <rect key="frame" x="0.0" y="156" width="293" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MvT-zZ-4Lz" secondAttribute="trailing" constant="50" id="CQz-hB-3FH"/>
                             <constraint firstItem="baN-3W-jQ8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="86.670000000000002" id="Kx8-ey-59j"/>
                             <constraint firstItem="Hy4-fe-pXW" firstAttribute="top" secondItem="baN-3W-jQ8" secondAttribute="bottom" constant="120" id="LOH-rS-BZq"/>
                             <constraint firstItem="D1Z-y5-8jP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="NZp-Sd-WDt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="baN-3W-jQ8" secondAttribute="trailing" constant="97.329999999999998" id="VSz-vz-Q5i"/>
+                            <constraint firstItem="MvT-zZ-4Lz" firstAttribute="top" secondItem="Hy4-fe-pXW" secondAttribute="bottom" constant="72" id="Wa5-2Y-pGb"/>
                             <constraint firstItem="D1Z-y5-8jP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="Zkd-IG-k8l"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="D1Z-y5-8jP" secondAttribute="trailing" constant="16" id="dbG-SH-meG"/>
                             <constraint firstItem="baN-3W-jQ8" firstAttribute="top" secondItem="D1Z-y5-8jP" secondAttribute="bottom" constant="57" id="lUY-9u-Aze"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Hy4-fe-pXW" secondAttribute="trailing" constant="128" id="lw8-zb-13K"/>
+                            <constraint firstItem="MvT-zZ-4Lz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="nEG-WH-kkl"/>
                             <constraint firstItem="Hy4-fe-pXW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="123" id="spD-Ri-cab"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Salary" id="szh-A8-5B2"/>
                     <connections>
+                        <outlet property="dailySalaryLbl" destination="91F-6B-8Rd" id="lP0-U7-VGG"/>
+                        <outlet property="monthlySalaryLbl" destination="mHJ-1o-2ok" id="c7V-Ao-zsn"/>
                         <outlet property="salarySC" destination="baN-3W-jQ8" id="fRZ-ob-MCK"/>
                         <outlet property="salaryTextField" destination="D1Z-y5-8jP" id="tjX-6W-9al"/>
+                        <outlet property="weeklySalaryLbl" destination="uNf-Uu-jRx" id="W2I-uV-Hpd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1055.7251908396945" y="-2.1126760563380285"/>
+            <point key="canvasLocation" x="1054.1984732824426" y="-2.1126760563380285"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="n3E-wM-1CX">
