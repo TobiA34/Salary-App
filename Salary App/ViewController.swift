@@ -7,13 +7,99 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, UITextFieldDelegate {
+    
+    @IBOutlet weak var salaryTextField: UITextField!
+    
+    @IBOutlet weak var salarySC: UISegmentedControl!
+    
+    // create variable monthly, days, weekly
+    
+    
+    //Annual salary ÷ 52 = weekly rate
+    // (Annual salary ÷ 52)÷ 7.5 = Hourly rate
+    //Annual salary ÷ 12 = Monthly rate
+    
+    var monthlySalary: Int?
+    var weeklySalary: Int?
+    var dailySalary: Int?
+    
+    let defaults = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        salaryTextField.keyboardType = .asciiCapableNumberPad
+        salaryTextField.delegate = self
+        setDoneOnKeyboard()
+    }
+    
+    func setDoneOnKeyboard() {
+        let keyboardToolbar = UIToolbar()
+        keyboardToolbar.sizeToFit()
+        let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneBarButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissKeyboard))
+        keyboardToolbar.items = [flexBarButton, doneBarButton]
+        self.salaryTextField.inputAccessoryView = keyboardToolbar
     }
 
-
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    func presentError() {
+        
+        if salaryTextField.text == "" {
+            let alert = UIAlertController(title: "Salary", message: "You need to enter yearly", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "dismiss", style: .default))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    
+    @IBAction func submitBtnPressed(_ sender: Any) {
+        
+        presentError()
+        
+        switch salarySC.selectedSegmentIndex {
+        case 0:
+            let salary = Int(self.salaryTextField.text!) ?? 0
+            monthlySalary =  salary / 12
+            
+            let formattedMonthlySalary = "£ \(String(monthlySalary ?? 0))"
+            
+            let alert = UIAlertController(title: "Monthly Salary", message:formattedMonthlySalary, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "dismiss", style: .default))
+            self.present(alert, animated: true, completion: nil)
+            
+            break
+            
+        case 1:
+            let salary = Int(self.salaryTextField.text!) ?? 0
+            dailySalary =  (salary / 52) / Int(7.5)
+            let formattedHourlySalary = "£ \(String(dailySalary ?? 0))"
+            
+            let alert = UIAlertController(title: "Hourly Salary", message:formattedHourlySalary , preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "dismiss", style: .default))
+            self.present(alert, animated: true, completion: nil)
+            break
+            
+        case 2:
+            let salary = Int(self.salaryTextField.text!) ?? 0
+            weeklySalary =  (salary / 52)
+            defaults.set(weeklySalary, forKey: "weekly")
+            
+            let formattedWeeklySalary = "£ \(String(weeklySalary ?? 0))"
+            let alert = UIAlertController(title: "Weekly Salary", message: formattedWeeklySalary, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "dismiss", style: .default))
+            self.present(alert, animated: true, completion: nil)
+            break
+            
+        default:
+            break
+        }
+    }
+    
 }
+
 
