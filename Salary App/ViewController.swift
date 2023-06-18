@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import SafariServices
+
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
@@ -20,10 +22,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     lazy var salaryTextField: UITextField = {
         let  salaryTextField = UITextField()
         salaryTextField.placeholder = "Please enter salary"
-        salaryTextField.layer.borderWidth = 1
-        salaryTextField.borderStyle = UITextField.BorderStyle.roundedRect
-        salaryTextField.layer.borderColor = UIColor.black.cgColor
-        salaryTextField.textColor = .black
+        salaryTextField.layer.borderWidth = 3
+        salaryTextField.layer.borderColor = UIColor(named: "salary")?.cgColor
+        salaryTextField.textColor = UIColor(named: "salary")
         salaryTextField.layer.cornerRadius = 16
         salaryTextField.keyboardType = .asciiCapableNumberPad
         salaryTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -43,7 +44,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     lazy var monthlySalaryLbl: UILabel = {
         let  monthlySalaryLbl = UILabel()
-        monthlySalaryLbl.textColor = .black
+        monthlySalaryLbl.textColor = UIColor(named: "salary")
         monthlySalaryLbl.text = "Monthly Total: £0 "
         monthlySalaryLbl.translatesAutoresizingMaskIntoConstraints = false
         return monthlySalaryLbl
@@ -51,7 +52,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     lazy var weeklySalaryLbl: UILabel = {
         let  weeklySalaryLbl = UILabel()
-        weeklySalaryLbl.textColor = .black
+        weeklySalaryLbl.textColor = UIColor(named: "salary")
         weeklySalaryLbl.text = "Weekly Total: £0"
         weeklySalaryLbl.translatesAutoresizingMaskIntoConstraints = false
         return weeklySalaryLbl
@@ -60,20 +61,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     lazy var dailySalaryLbl: UILabel = {
         let  dailySalaryLbl = UILabel()
-        dailySalaryLbl.textColor = .black
+        dailySalaryLbl.textColor = UIColor(named: "salary")
         dailySalaryLbl.text = "Daily Total: £0"
         dailySalaryLbl.translatesAutoresizingMaskIntoConstraints = false
         return dailySalaryLbl
-    }()
-    
-    lazy var submitBtn: UIButton = {
-        var button = UIButton(type: .system)
-        var config = UIButton.Configuration.filled()
-        button.configuration = .filled()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        config.cornerStyle = .capsule
-        button.configuration = config
-        return button
     }()
     
     
@@ -83,12 +74,29 @@ class ViewController: UIViewController, UITextFieldDelegate {
         salaryTextField.leftViewMode = .always
     }
     
+    private func openLink(_ stringURL: String) {
+         guard let url = URL(string: stringURL) else {
+             // We should handle an invalid stringURL
+             return
+         }
+
+         // Present SFSafariViewController
+         let safariVC = SFSafariViewController(url: url)
+         present(safariVC, animated: true, completion: nil)
+     }
+    
+    @objc func displayAdvice() {
+        openLink("https://www.pagepersonnel.co.uk/advice/salary-centre/salary-advice")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        self.navigationItem.title = "My Salary Calculator"
-        navigationController?.navigationBar.prefersLargeTitles = true
+        view.backgroundColor = UIColor(named: "darkMode")
+        navigationController?.navigationBar.topItem?.title = "My Salary Calculator"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor(named: "darkMode")]
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "info.circle"), style: .plain, target: self, action: #selector(displayAdvice))
+        
         setDoneOnKeyboard()
         addPadding()
         setScreenLayout()
@@ -107,56 +115,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         view.endEditing(true)
     }
     
-    func setScreenLayout() {
-        
-        submitBtn.setTitle("Calculate Salary", for: .normal)
-        submitBtn.addTarget(self, action: #selector(submitBtnPressed), for: .touchUpInside)
-        
-        view.addSubview(salaryTextField)
-        view.addSubview(submitBtn)
-        view.addSubview(stackView)
-        stackView.addArrangedSubview(monthlySalaryLbl)
-        stackView.addArrangedSubview(weeklySalaryLbl)
-        stackView.addArrangedSubview(dailySalaryLbl)
-        
-        
-        NSLayoutConstraint.activate([
-            salaryTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,constant: 20),
-            salaryTextField.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor,constant: 16),
-            salaryTextField.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,constant: -16),
-            salaryTextField.heightAnchor.constraint(equalToConstant: 50),
-            salaryTextField.widthAnchor.constraint(equalToConstant: 100),
-            
-            stackView.topAnchor.constraint(equalTo: salaryTextField.safeAreaLayoutGuide.topAnchor,constant: 84),
-            stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor,constant: 48),
-            stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,constant: -48),
-            stackView.heightAnchor.constraint(equalToConstant: 200),
-            
-            
-            submitBtn.topAnchor.constraint(equalTo: stackView.safeAreaLayoutGuide.topAnchor,constant: 220),
-            submitBtn.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor,constant: 48),
-            submitBtn.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,constant: -48),
-            submitBtn.heightAnchor.constraint(equalToConstant: 50)
-        ])
-    }
-    
-    func presentError() {
-        
-        let alert = UIAlertController(title: "Salary", message: "You need to enter yearly", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "dismiss", style: .default))
-        self.present(alert, animated: true, completion: nil)
-    }
-    
-    
-    
-    @objc func submitBtnPressed() {
-        
+    @objc func textFieldDidChange() {
+        print(salaryTextField.text ?? "")
         let salary = Decimal(string:self.salaryTextField.text!) ?? 0.0
         
         let formatter = NumberFormatter()
         formatter.maximumFractionDigits = 2
         formatter.minimumFractionDigits = 0
-        formatter.currencyCode = "GBP"
+        formatter.currencyCode = Locale.current.language.region?.identifier
         formatter.numberStyle = .currency
         
         if salaryTextField.text == "" {
@@ -176,9 +142,39 @@ class ViewController: UIViewController, UITextFieldDelegate {
             monthlySalaryLbl.text = "Monthly Total: \(formattedMonthlySalary)"
             weeklySalaryLbl.text = "Weekly Total: \(formattedWeeklySalary)"
             dailySalaryLbl.text = "Daily Total: \(formattedDailySalary)"
-            
         }
+    }
+    
+    func setScreenLayout() {
         
+        salaryTextField.addTarget(self, action:  #selector(textFieldDidChange), for: UIControl.Event.editingChanged)
+        
+        view.addSubview(salaryTextField)
+        view.addSubview(stackView)
+        stackView.addArrangedSubview(monthlySalaryLbl)
+        stackView.addArrangedSubview(weeklySalaryLbl)
+        stackView.addArrangedSubview(dailySalaryLbl)
+        
+        
+        NSLayoutConstraint.activate([
+            salaryTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,constant: 20),
+            salaryTextField.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor,constant: 16),
+            salaryTextField.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,constant: -16),
+            salaryTextField.heightAnchor.constraint(equalToConstant: 50),
+            salaryTextField.widthAnchor.constraint(equalToConstant: 100),
+            
+            stackView.topAnchor.constraint(equalTo: salaryTextField.safeAreaLayoutGuide.topAnchor,constant: 84),
+            stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor,constant: 48),
+            stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,constant: -48),
+            stackView.heightAnchor.constraint(equalToConstant: 200),
+        ])
+    }
+    
+    func presentError() {
+        
+        let alert = UIAlertController(title: "Salary", message: "You need to enter yearly", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "dismiss", style: .default))
+        self.present(alert, animated: true, completion: nil)
     }
     
 }
