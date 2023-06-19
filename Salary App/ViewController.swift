@@ -9,17 +9,13 @@ import UIKit
 import SafariServices
 
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController {
     
     //Annual salary ÷ 52 = weekly rate
     // (Annual salary ÷ 52)÷ 7.5 = Hourly rate
     //Annual salary ÷ 12 = Monthly rate
     
-    var monthlySalary: Decimal?
-    var weeklySalary: Decimal?
-    var dailySalary: Decimal?
-    
-    lazy var salaryTextField: UITextField = {
+    private lazy var salaryTextField: UITextField = {
         let  salaryTextField = UITextField()
         salaryTextField.placeholder = "Please enter salary"
         salaryTextField.layer.borderWidth = 3
@@ -28,11 +24,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
         salaryTextField.layer.cornerRadius = 16
         salaryTextField.keyboardType = .asciiCapableNumberPad
         salaryTextField.translatesAutoresizingMaskIntoConstraints = false
-        salaryTextField.delegate = self
+        salaryTextField.addTarget(self, action:  #selector(textFieldDidChange), for: UIControl.Event.editingChanged)
+        salaryTextField.accessibilityIdentifier = "salaryTextField"
         return salaryTextField
     }()
     
-    lazy var stackView: UIStackView = {
+    private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.alignment = .center
@@ -42,112 +39,97 @@ class ViewController: UIViewController, UITextFieldDelegate {
         return stackView
     }()
     
-    lazy var monthlySalaryLbl: UILabel = {
+    private lazy var monthlySalaryLbl: UILabel = {
         let  monthlySalaryLbl = UILabel()
         monthlySalaryLbl.textColor = UIColor(named: "salary")
         monthlySalaryLbl.text = "Monthly Total: £0 "
         monthlySalaryLbl.translatesAutoresizingMaskIntoConstraints = false
+        monthlySalaryLbl.accessibilityIdentifier = "monthlySalaryLbl"
         return monthlySalaryLbl
     }()
     
-    lazy var weeklySalaryLbl: UILabel = {
+    private lazy var weeklySalaryLbl: UILabel = {
         let  weeklySalaryLbl = UILabel()
         weeklySalaryLbl.textColor = UIColor(named: "salary")
         weeklySalaryLbl.text = "Weekly Total: £0"
         weeklySalaryLbl.translatesAutoresizingMaskIntoConstraints = false
+        weeklySalaryLbl.accessibilityIdentifier = "weeklySalaryLbl"
         return weeklySalaryLbl
     }()
     
     
-    lazy var dailySalaryLbl: UILabel = {
+    private lazy var dailySalaryLbl: UILabel = {
         let  dailySalaryLbl = UILabel()
         dailySalaryLbl.textColor = UIColor(named: "salary")
         dailySalaryLbl.text = "Daily Total: £0"
         dailySalaryLbl.translatesAutoresizingMaskIntoConstraints = false
+        dailySalaryLbl.accessibilityIdentifier = "dailySalaryLbl"
         return dailySalaryLbl
     }()
     
+    private lazy var numberFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.maximumFractionDigits = 2
+        formatter.minimumFractionDigits = 2
+        formatter.currencyCode = Locale.current.language.region?.identifier
+        formatter.numberStyle = .currency
+        return formatter
+    }()
     
-    private func addPadding() {
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 50))
-        salaryTextField.leftView = paddingView
-        salaryTextField.leftViewMode = .always
+    private let salaryViewModel = SalaryViewModel()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setup()
     }
+}
+
+// MARK: Safari Link
+private extension ViewController {
     
     private func openLink(_ stringURL: String) {
-         guard let url = URL(string: stringURL) else {
-             // We should handle an invalid stringURL
-             return
-         }
-
-         // Present SFSafariViewController
-         let safariVC = SFSafariViewController(url: url)
-         present(safariVC, animated: true, completion: nil)
-     }
+        guard let url = URL(string: stringURL) else {
+            // We should handle an invalid stringURL
+            return
+        }
+        
+        // Present SFSafariViewController
+        let safariVC = SFSafariViewController(url: url)
+        safariVC.modalPresentationStyle = .formSheet
+        present(safariVC, animated: true, completion: nil)
+    }
     
     @objc func displayAdvice() {
         openLink("https://www.pagepersonnel.co.uk/advice/salary-centre/salary-advice")
     }
+}
+
+// MARK: Layout
+private extension ViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    func setup() {
+        // Inital view and navigation bar setup
         view.backgroundColor = UIColor(named: "darkMode")
         navigationController?.navigationBar.topItem?.title = "My Salary Calculator"
         self.navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor(named: "darkMode")]
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "info.circle"), style: .plain, target: self, action: #selector(displayAdvice))
         
-        setDoneOnKeyboard()
-        addPadding()
-        setScreenLayout()
-    }
-    
-    func setDoneOnKeyboard() {
+        // This is adding padding to the textfield
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 50))
+        salaryTextField.leftView = paddingView
+        salaryTextField.leftViewMode = .always
+        
+        // This sets up the done button on keyboard
         let keyboardToolbar = UIToolbar()
         keyboardToolbar.sizeToFit()
         let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let doneBarButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissKeyboard))
         keyboardToolbar.items = [flexBarButton, doneBarButton]
         self.salaryTextField.inputAccessoryView = keyboardToolbar
-    }
-    
-    @objc func dismissKeyboard() {
-        view.endEditing(true)
-    }
-    
-    @objc func textFieldDidChange() {
-        print(salaryTextField.text ?? "")
-        let salary = Decimal(string:self.salaryTextField.text!) ?? 0.0
         
-        let formatter = NumberFormatter()
-        formatter.maximumFractionDigits = 2
-        formatter.minimumFractionDigits = 0
-        formatter.currencyCode = Locale.current.language.region?.identifier
-        formatter.numberStyle = .currency
         
-        if salaryTextField.text == "" {
-            presentError()
-        }
-        
-        if salary != 0 {
-            
-            monthlySalary =  salary / 12.0
-            dailySalary =  (salary / 52.0) / 7.5
-            weeklySalary =  (salary / 52.0)
-            
-            let formattedMonthlySalary =  formatter.string(for: monthlySalary) ?? "?"
-            let formattedWeeklySalary =  formatter.string(for: weeklySalary) ?? "?"
-            let formattedDailySalary =  formatter.string(for: dailySalary) ?? "?"
-            
-            monthlySalaryLbl.text = "Monthly Total: \(formattedMonthlySalary)"
-            weeklySalaryLbl.text = "Weekly Total: \(formattedWeeklySalary)"
-            dailySalaryLbl.text = "Daily Total: \(formattedDailySalary)"
-        }
-    }
-    
-    func setScreenLayout() {
-        
-        salaryTextField.addTarget(self, action:  #selector(textFieldDidChange), for: UIControl.Event.editingChanged)
+        //Laying out the views on the screen
         
         view.addSubview(salaryTextField)
         view.addSubview(stackView)
@@ -169,14 +151,30 @@ class ViewController: UIViewController, UITextFieldDelegate {
             stackView.heightAnchor.constraint(equalToConstant: 200),
         ])
     }
-    
-    func presentError() {
-        
-        let alert = UIAlertController(title: "Salary", message: "You need to enter yearly", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "dismiss", style: .default))
-        self.present(alert, animated: true, completion: nil)
-    }
-    
 }
 
+// MARK: TextField Actions
 
+private extension ViewController {
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    @objc func textFieldDidChange() {
+        print(salaryTextField.text ?? "")
+        let salary = Double(self.salaryTextField.text!) ?? 0.0
+
+        let monthlySalary = salaryViewModel.calculate(salary: salary, type: .monthly)
+        let dailySalary =  salaryViewModel.calculate(salary: salary, type: .daily)
+        let weeklySalary = salaryViewModel.calculate(salary: salary, type: .weekly)
+        
+        let formattedMonthlySalary =  numberFormatter.string(for: monthlySalary) ?? "-"
+        let formattedWeeklySalary =  numberFormatter.string(for: weeklySalary) ?? "-"
+        let formattedDailySalary =  numberFormatter.string(for: dailySalary) ?? "-"
+        
+        monthlySalaryLbl.text = "Monthly Total: \(formattedMonthlySalary)"
+        weeklySalaryLbl.text = "Weekly Total: \(formattedWeeklySalary)"
+        dailySalaryLbl.text = "Daily Total: \(formattedDailySalary)"
+    }
+}
