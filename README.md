@@ -1,5 +1,5 @@
 
-# Project Title
+# Salary App
 
 This is a salary app which allows the user to calculate their monthly, daily and weekly salary.
 
