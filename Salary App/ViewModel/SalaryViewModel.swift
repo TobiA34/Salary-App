@@ -13,6 +13,19 @@ enum SalaryType {
     case daily
 }
 
+extension SalaryType {
+    var title: String {
+        switch self {
+        case .monthly:
+            return "Monthly"
+        case .weekly:
+            return "Weekly"
+        case .daily:
+            return "Daily"
+        }
+    }
+}
+
 struct SalaryViewModel {
     
     /// Calculate user salary based on type
@@ -27,15 +40,14 @@ struct SalaryViewModel {
         switch type {
         case .monthly:
             result =  salary / 12.0
-            return floor(result * 100) / 100
         case .weekly:
             result =  salary / 52.0 / 7.5
-            return floor(result * 100) / 100
         case .daily:
             result =  salary / 52.0
-            return floor(result * 100) / 100
         }
-        return result
+        return floor(result * 100) / 100
     }
     
 }
+
+
