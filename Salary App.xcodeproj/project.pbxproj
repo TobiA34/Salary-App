@@ -122,7 +122,6 @@
 				BDA8F4392A45D31100BC79CA /* ReusableComponents */,
 				BD8251262A404F9B00C646C4 /* UITestIdentifier */,
 				BD8250482A3B492200C646C4 /* View */,
-				BD8250472A3B490400C646C4 /* Model */,
 				BD8250462A3B48F900C646C4 /* ViewModel */,
 				BD824F8A2A33DD4200C646C4 /* AppDelegate.swift */,
 				BD824F8C2A33DD4200C646C4 /* SceneDelegate.swift */,
@@ -140,13 +139,6 @@
 				BD8250442A3B412200C646C4 /* SalaryViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		BD8250472A3B490400C646C4 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		BD8250482A3B492200C646C4 /* View */ = {
