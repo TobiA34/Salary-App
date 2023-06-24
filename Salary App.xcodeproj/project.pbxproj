@@ -7,23 +7,60 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD473EEF2A4341C700A01C30 /* SalaryReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD473EEE2A4341C700A01C30 /* SalaryReusableView.swift */; };
 		BD824F8B2A33DD4200C646C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD824F8A2A33DD4200C646C4 /* AppDelegate.swift */; };
 		BD824F8D2A33DD4200C646C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD824F8C2A33DD4200C646C4 /* SceneDelegate.swift */; };
 		BD824F8F2A33DD4200C646C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD824F8E2A33DD4200C646C4 /* ViewController.swift */; };
-		BD824F922A33DD4200C646C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD824F902A33DD4200C646C4 /* Main.storyboard */; };
 		BD824F942A33DD4300C646C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD824F932A33DD4300C646C4 /* Assets.xcassets */; };
 		BD824F972A33DD4300C646C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD824F952A33DD4300C646C4 /* LaunchScreen.storyboard */; };
+		BD8250452A3B412200C646C4 /* SalaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8250442A3B412200C646C4 /* SalaryViewModel.swift */; };
+		BD82511E2A404A5200C646C4 /* SalaryAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD82511D2A404A5200C646C4 /* SalaryAppUITests.swift */; };
+		BD8251202A404A5200C646C4 /* SalaryAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD82511F2A404A5200C646C4 /* SalaryAppUITestsLaunchTests.swift */; };
+		BD8251282A404FC000C646C4 /* TestIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8251272A404FC000C646C4 /* TestIdentifier.swift */; };
+		BD972E8F2A4098E0008336F8 /* SalaryAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD972E8E2A4098E0008336F8 /* SalaryAppTests.swift */; };
+		BDA8F43B2A45D32F00BC79CA /* SalaryBreakDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA8F43A2A45D32F00BC79CA /* SalaryBreakDownView.swift */; };
+		BDA8F43D2A46FF0E00BC79CA /* SalaryInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA8F43C2A46FF0E00BC79CA /* SalaryInfoView.swift */; };
+		BDA8F43F2A4705E400BC79CA /* SalaryTotalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA8F43E2A4705E400BC79CA /* SalaryTotalView.swift */; };
+		BDA8F4412A471A5800BC79CA /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA8F4402A471A5800BC79CA /* InfoView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		BD8251212A404A5200C646C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BD824F7F2A33DD4200C646C4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BD824F862A33DD4200C646C4;
+			remoteInfo = "Salary App";
+		};
+		BD972E902A4098E0008336F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BD824F7F2A33DD4200C646C4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BD824F862A33DD4200C646C4;
+			remoteInfo = "Salary App";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		BD473EEE2A4341C700A01C30 /* SalaryReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryReusableView.swift; sourceTree = "<group>"; };
 		BD824F872A33DD4200C646C4 /* Salary App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Salary App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD824F8A2A33DD4200C646C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD824F8C2A33DD4200C646C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		BD824F8E2A33DD4200C646C4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		BD824F912A33DD4200C646C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BD824F932A33DD4300C646C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD824F962A33DD4300C646C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD824F982A33DD4300C646C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD8250442A3B412200C646C4 /* SalaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryViewModel.swift; sourceTree = "<group>"; };
+		BD82511B2A404A5200C646C4 /* SalaryAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SalaryAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD82511D2A404A5200C646C4 /* SalaryAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryAppUITests.swift; sourceTree = "<group>"; };
+		BD82511F2A404A5200C646C4 /* SalaryAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BD8251272A404FC000C646C4 /* TestIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestIdentifier.swift; sourceTree = "<group>"; };
+		BD972E8C2A4098E0008336F8 /* SalaryAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SalaryAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD972E8E2A4098E0008336F8 /* SalaryAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryAppTests.swift; sourceTree = "<group>"; };
+		BDA8F43A2A45D32F00BC79CA /* SalaryBreakDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryBreakDownView.swift; sourceTree = "<group>"; };
+		BDA8F43C2A46FF0E00BC79CA /* SalaryInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryInfoView.swift; sourceTree = "<group>"; };
+		BDA8F43E2A4705E400BC79CA /* SalaryTotalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryTotalView.swift; sourceTree = "<group>"; };
+		BDA8F4402A471A5800BC79CA /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,13 +71,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BD8251182A404A5200C646C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD972E892A4098E0008336F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BD473EED2A4341AC00A01C30 /* ReusableView */ = {
+			isa = PBXGroup;
+			children = (
+				BD473EEE2A4341C700A01C30 /* SalaryReusableView.swift */,
+			);
+			path = ReusableView;
+			sourceTree = "<group>";
+		};
 		BD824F7E2A33DD4200C646C4 = {
 			isa = PBXGroup;
 			children = (
 				BD824F892A33DD4200C646C4 /* Salary App */,
+				BD82511C2A404A5200C646C4 /* SalaryAppUITests */,
+				BD972E8D2A4098E0008336F8 /* SalaryAppTests */,
 				BD824F882A33DD4200C646C4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +110,8 @@
 			isa = PBXGroup;
 			children = (
 				BD824F872A33DD4200C646C4 /* Salary App.app */,
+				BD82511B2A404A5200C646C4 /* SalaryAppUITests.xctest */,
+				BD972E8C2A4098E0008336F8 /* SalaryAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,15 +119,70 @@
 		BD824F892A33DD4200C646C4 /* Salary App */ = {
 			isa = PBXGroup;
 			children = (
+				BDA8F4392A45D31100BC79CA /* ReusableComponents */,
+				BD8251262A404F9B00C646C4 /* UITestIdentifier */,
+				BD8250482A3B492200C646C4 /* View */,
+				BD8250462A3B48F900C646C4 /* ViewModel */,
 				BD824F8A2A33DD4200C646C4 /* AppDelegate.swift */,
 				BD824F8C2A33DD4200C646C4 /* SceneDelegate.swift */,
 				BD824F8E2A33DD4200C646C4 /* ViewController.swift */,
-				BD824F902A33DD4200C646C4 /* Main.storyboard */,
 				BD824F932A33DD4300C646C4 /* Assets.xcassets */,
 				BD824F952A33DD4300C646C4 /* LaunchScreen.storyboard */,
 				BD824F982A33DD4300C646C4 /* Info.plist */,
 			);
 			path = "Salary App";
+			sourceTree = "<group>";
+		};
+		BD8250462A3B48F900C646C4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BD8250442A3B412200C646C4 /* SalaryViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BD8250482A3B492200C646C4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BD473EED2A4341AC00A01C30 /* ReusableView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BD82511C2A404A5200C646C4 /* SalaryAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BD82511D2A404A5200C646C4 /* SalaryAppUITests.swift */,
+				BD82511F2A404A5200C646C4 /* SalaryAppUITestsLaunchTests.swift */,
+			);
+			path = SalaryAppUITests;
+			sourceTree = "<group>";
+		};
+		BD8251262A404F9B00C646C4 /* UITestIdentifier */ = {
+			isa = PBXGroup;
+			children = (
+				BD8251272A404FC000C646C4 /* TestIdentifier.swift */,
+			);
+			path = UITestIdentifier;
+			sourceTree = "<group>";
+		};
+		BD972E8D2A4098E0008336F8 /* SalaryAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				BD972E8E2A4098E0008336F8 /* SalaryAppTests.swift */,
+			);
+			path = SalaryAppTests;
+			sourceTree = "<group>";
+		};
+		BDA8F4392A45D31100BC79CA /* ReusableComponents */ = {
+			isa = PBXGroup;
+			children = (
+				BDA8F43A2A45D32F00BC79CA /* SalaryBreakDownView.swift */,
+				BDA8F43C2A46FF0E00BC79CA /* SalaryInfoView.swift */,
+				BDA8F43E2A4705E400BC79CA /* SalaryTotalView.swift */,
+				BDA8F4402A471A5800BC79CA /* InfoView.swift */,
+			);
+			path = ReusableComponents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -87,6 +205,42 @@
 			productReference = BD824F872A33DD4200C646C4 /* Salary App.app */;
 			productType = "com.apple.product-type.application";
 		};
+		BD82511A2A404A5200C646C4 /* SalaryAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BD8251232A404A5200C646C4 /* Build configuration list for PBXNativeTarget "SalaryAppUITests" */;
+			buildPhases = (
+				BD8251172A404A5200C646C4 /* Sources */,
+				BD8251182A404A5200C646C4 /* Frameworks */,
+				BD8251192A404A5200C646C4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BD8251222A404A5200C646C4 /* PBXTargetDependency */,
+			);
+			name = SalaryAppUITests;
+			productName = SalaryAppUITests;
+			productReference = BD82511B2A404A5200C646C4 /* SalaryAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		BD972E8B2A4098E0008336F8 /* SalaryAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BD972E942A4098E1008336F8 /* Build configuration list for PBXNativeTarget "SalaryAppTests" */;
+			buildPhases = (
+				BD972E882A4098E0008336F8 /* Sources */,
+				BD972E892A4098E0008336F8 /* Frameworks */,
+				BD972E8A2A4098E0008336F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BD972E912A4098E0008336F8 /* PBXTargetDependency */,
+			);
+			name = SalaryAppTests;
+			productName = SalaryAppTests;
+			productReference = BD972E8C2A4098E0008336F8 /* SalaryAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -99,6 +253,14 @@
 				TargetAttributes = {
 					BD824F862A33DD4200C646C4 = {
 						CreatedOnToolsVersion = 14.3;
+					};
+					BD82511A2A404A5200C646C4 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = BD824F862A33DD4200C646C4;
+					};
+					BD972E8B2A4098E0008336F8 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = BD824F862A33DD4200C646C4;
 					};
 				};
 			};
@@ -116,6 +278,8 @@
 			projectRoot = "";
 			targets = (
 				BD824F862A33DD4200C646C4 /* Salary App */,
+				BD82511A2A404A5200C646C4 /* SalaryAppUITests */,
+				BD972E8B2A4098E0008336F8 /* SalaryAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -127,7 +291,20 @@
 			files = (
 				BD824F972A33DD4300C646C4 /* LaunchScreen.storyboard in Resources */,
 				BD824F942A33DD4300C646C4 /* Assets.xcassets in Resources */,
-				BD824F922A33DD4200C646C4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD8251192A404A5200C646C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD972E8A2A4098E0008336F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +315,52 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD8251282A404FC000C646C4 /* TestIdentifier.swift in Sources */,
+				BDA8F43F2A4705E400BC79CA /* SalaryTotalView.swift in Sources */,
+				BD473EEF2A4341C700A01C30 /* SalaryReusableView.swift in Sources */,
+				BDA8F43D2A46FF0E00BC79CA /* SalaryInfoView.swift in Sources */,
 				BD824F8F2A33DD4200C646C4 /* ViewController.swift in Sources */,
+				BDA8F43B2A45D32F00BC79CA /* SalaryBreakDownView.swift in Sources */,
 				BD824F8B2A33DD4200C646C4 /* AppDelegate.swift in Sources */,
 				BD824F8D2A33DD4200C646C4 /* SceneDelegate.swift in Sources */,
+				BDA8F4412A471A5800BC79CA /* InfoView.swift in Sources */,
+				BD8250452A3B412200C646C4 /* SalaryViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD8251172A404A5200C646C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD8251202A404A5200C646C4 /* SalaryAppUITestsLaunchTests.swift in Sources */,
+				BD82511E2A404A5200C646C4 /* SalaryAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD972E882A4098E0008336F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD972E8F2A4098E0008336F8 /* SalaryAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		BD824F902A33DD4200C646C4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BD824F912A33DD4200C646C4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
+/* Begin PBXTargetDependency section */
+		BD8251222A404A5200C646C4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BD824F862A33DD4200C646C4 /* Salary App */;
+			targetProxy = BD8251212A404A5200C646C4 /* PBXContainerItemProxy */;
 		};
+		BD972E912A4098E0008336F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BD824F862A33DD4200C646C4 /* Salary App */;
+			targetProxy = BD972E902A4098E0008336F8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
 		BD824F952A33DD4300C646C4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -287,13 +493,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S39536K3H7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Salary App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -314,13 +520,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S39536K3H7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Salary App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -331,6 +537,84 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BD8251242A404A5200C646C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S39536K3H7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = TA.SalaryAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Salary App";
+			};
+			name = Debug;
+		};
+		BD8251252A404A5200C646C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S39536K3H7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = TA.SalaryAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Salary App";
+			};
+			name = Release;
+		};
+		BD972E922A4098E1008336F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S39536K3H7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = TA.SalaryAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Salary App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Salary App";
+			};
+			name = Debug;
+		};
+		BD972E932A4098E1008336F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S39536K3H7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = TA.SalaryAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Salary App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Salary App";
 			};
 			name = Release;
 		};
@@ -351,6 +635,24 @@
 			buildConfigurations = (
 				BD824F9C2A33DD4300C646C4 /* Debug */,
 				BD824F9D2A33DD4300C646C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BD8251232A404A5200C646C4 /* Build configuration list for PBXNativeTarget "SalaryAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD8251242A404A5200C646C4 /* Debug */,
+				BD8251252A404A5200C646C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BD972E942A4098E1008336F8 /* Build configuration list for PBXNativeTarget "SalaryAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD972E922A4098E1008336F8 /* Debug */,
+				BD972E932A4098E1008336F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
