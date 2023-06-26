@@ -12,7 +12,7 @@ final class SalaryAppTests: XCTestCase {
 
     
     var salaryVm: SalaryViewModel!
-    let salary: Double = 54000
+    var salary: Double = 54000
  
     func testMonthlySalaryLogic() {
         let monthlySalary = salaryVm.calculate(salary: salary, type: .monthly)
@@ -38,11 +38,13 @@ final class SalaryAppTests: XCTestCase {
     override func tearDown() {
         super.tearDown()
         salaryVm = nil
+        salary = 0
     }
     
     override func setUp() {
         super.setUp()
         salaryVm = SalaryViewModel()
+        salary = 54000
     }
     
 }
