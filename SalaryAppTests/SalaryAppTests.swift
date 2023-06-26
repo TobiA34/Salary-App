@@ -11,8 +11,8 @@ import XCTest
 final class SalaryAppTests: XCTestCase {
 
     
-    let salaryVm = SalaryViewModel()
-    let salary = Double(54000)
+    var salaryVm: SalaryViewModel!
+    let salary: Double = 54000
  
     func testMonthlySalaryLogic() {
         let monthlySalary = salaryVm.calculate(salary: salary, type: .monthly)
@@ -33,6 +33,16 @@ final class SalaryAppTests: XCTestCase {
     func testHourlySalaryLogic() {
         let hourlySalary = salaryVm.calculate(salary: salary, type: .hourly)
         XCTAssertEqual(hourlySalary,27.69)
+    }
+    
+    override func tearDown() {
+        super.tearDown()
+        salaryVm = nil
+    }
+    
+    override func setUp() {
+        super.setUp()
+        salaryVm = SalaryViewModel()
     }
     
 }
