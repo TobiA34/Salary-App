@@ -11,6 +11,7 @@ enum SalaryType {
     case monthly
     case weekly
     case daily
+    case hourly
 }
 
 extension SalaryType {
@@ -22,6 +23,8 @@ extension SalaryType {
             return "Weekly"
         case .daily:
             return "Daily"
+        case .hourly:
+            return "Hourly"
         }
     }
 }
@@ -44,6 +47,8 @@ struct SalaryViewModel {
             result =  salary / 52.0 / 7.5
         case .daily:
             result =  salary / 52.0
+        case .hourly:
+            result = salary / 52.0 / 37.5
         }
         return floor(result * 100) / 100
     }
