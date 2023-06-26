@@ -60,17 +60,15 @@ class ViewController: UIViewController {
         return weeklyTotalView
     }()
     
+    private lazy var hourlyTotalView: SalaryTotalView = {
+        let hourlyTotalView = SalaryTotalView(type: .hourly)
+        return hourlyTotalView
+    }()
+    
     private lazy var salaryInfoVw: SalaryInfoView = {
         let salaryInfoVw = SalaryInfoView()
         return salaryInfoVw
     }()
-    
-    private lazy var nationalInsuranceView: InfoView = {
-        let nationalInsuranceView = InfoView(infoTitle: "National Isada",
-                                             infoDescription: "sakdjhsahjdksahjdsahjadshjkahjkadshdsa")
-        return nationalInsuranceView
-    }()
-    
     
     private let salaryViewModel = SalaryViewModel()
     
@@ -126,6 +124,7 @@ private extension ViewController {
         monthlyTotalView.delegate = self
         dailyTotalView.delegate = self
         weeklyTotalView.delegate = self
+        hourlyTotalView.delegate = self
         //Laying out the views on the screen
         view.addSubview(stackView)
         
@@ -133,9 +132,9 @@ private extension ViewController {
         stackView.addArrangedSubview(monthlyTotalView)
         stackView.addArrangedSubview(weeklyTotalView)
         stackView.addArrangedSubview(dailyTotalView)
+        stackView.addArrangedSubview(hourlyTotalView)
         
         stackView.addArrangedSubview(salaryInfoVw)
-        stackView.addArrangedSubview(nationalInsuranceView)
         
         NSLayoutConstraint.activate([
             
@@ -166,10 +165,12 @@ private extension ViewController {
         let monthlySalary = salaryViewModel.calculate(salary: salary, type: .monthly)
         let dailySalary =  salaryViewModel.calculate(salary: salary, type: .daily)
         let weeklySalary = salaryViewModel.calculate(salary: salary, type: .weekly)
+        let hourlySalary = salaryViewModel.calculate(salary: salary, type: .hourly)
         
         monthlyTotalView.update(total: monthlySalary)
         dailyTotalView.update(total: dailySalary)
         weeklyTotalView.update(total: weeklySalary)
+        hourlyTotalView.update(total: hourlySalary)
         
     }
 }
@@ -185,6 +186,8 @@ extension ViewController: SalaryTotalViewDelegate {
             openLink("https://www.ign.com/uk")
         case .daily:
             openLink("https://www.designmynight.com/manchester/bars/secret-bars-manchester")
+        case .hourly:
+            openLink("https://stevenpcurtis.medium.com/create-a-uistackview-in-a-uiscrollview-e2a959fa061")
         }
     }
 }
