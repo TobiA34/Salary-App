@@ -12,21 +12,27 @@ final class SalaryAppTests: XCTestCase {
 
     
     let salaryVm = SalaryViewModel()
+    let salary = Double(54000)
  
     func testMonthlySalaryLogic() {
-        let monthlySalary = salaryVm.calculate(salary: 54000, type: .monthly)
+        let monthlySalary = salaryVm.calculate(salary: salary, type: .monthly)
         XCTAssertEqual(monthlySalary,4500)
     }
 
     func testWeeklySalaryLogic()  {
-        let weeklySalary = salaryVm.calculate(salary: 54000, type: .weekly)
+        let weeklySalary = salaryVm.calculate(salary: salary, type: .weekly)
         XCTAssertEqual(weeklySalary,138.46)
     }
     
     func testDailySalaryLogic() {
-        let dailySalary = salaryVm.calculate(salary: 54000, type: .daily)
+        let dailySalary = salaryVm.calculate(salary: salary, type: .daily)
         XCTAssertEqual(dailySalary,1038.46)
         
+    }
+    
+    func testHourlySalaryLogic() {
+        let hourlySalary = salaryVm.calculate(salary: salary, type: .hourly)
+        XCTAssertEqual(hourlySalary,27.69)
     }
     
 }
