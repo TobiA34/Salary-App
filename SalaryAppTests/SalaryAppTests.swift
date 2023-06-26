@@ -12,7 +12,7 @@ final class SalaryAppTests: XCTestCase {
 
     
     var salaryVm: SalaryViewModel!
-    var salary: Double = 54000
+    var salary: Double!
  
     func testMonthlySalaryLogic() {
         let monthlySalary = salaryVm.calculate(salary: salary, type: .monthly)
