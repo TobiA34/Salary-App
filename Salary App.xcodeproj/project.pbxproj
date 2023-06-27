@@ -7,18 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BD473EEF2A4341C700A01C30 /* SalaryReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD473EEE2A4341C700A01C30 /* SalaryReusableView.swift */; };
 		BD824F8B2A33DD4200C646C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD824F8A2A33DD4200C646C4 /* AppDelegate.swift */; };
 		BD824F8D2A33DD4200C646C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD824F8C2A33DD4200C646C4 /* SceneDelegate.swift */; };
-		BD824F8F2A33DD4200C646C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD824F8E2A33DD4200C646C4 /* ViewController.swift */; };
+		BD824F8F2A33DD4200C646C4 /* SalaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD824F8E2A33DD4200C646C4 /* SalaryViewController.swift */; };
 		BD824F942A33DD4300C646C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD824F932A33DD4300C646C4 /* Assets.xcassets */; };
 		BD824F972A33DD4300C646C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD824F952A33DD4300C646C4 /* LaunchScreen.storyboard */; };
 		BD8250452A3B412200C646C4 /* SalaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8250442A3B412200C646C4 /* SalaryViewModel.swift */; };
 		BD82511E2A404A5200C646C4 /* SalaryAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD82511D2A404A5200C646C4 /* SalaryAppUITests.swift */; };
 		BD8251202A404A5200C646C4 /* SalaryAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD82511F2A404A5200C646C4 /* SalaryAppUITestsLaunchTests.swift */; };
-		BD8251282A404FC000C646C4 /* TestIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8251272A404FC000C646C4 /* TestIdentifier.swift */; };
 		BD972E8F2A4098E0008336F8 /* SalaryAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD972E8E2A4098E0008336F8 /* SalaryAppTests.swift */; };
-		BDA8F43B2A45D32F00BC79CA /* SalaryBreakDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA8F43A2A45D32F00BC79CA /* SalaryBreakDownView.swift */; };
 		BDA8F43D2A46FF0E00BC79CA /* SalaryInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA8F43C2A46FF0E00BC79CA /* SalaryInfoView.swift */; };
 		BDA8F43F2A4705E400BC79CA /* SalaryTotalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA8F43E2A4705E400BC79CA /* SalaryTotalView.swift */; };
 		BDA8F4412A471A5800BC79CA /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA8F4402A471A5800BC79CA /* InfoView.swift */; };
@@ -42,11 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BD473EEE2A4341C700A01C30 /* SalaryReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryReusableView.swift; sourceTree = "<group>"; };
 		BD824F872A33DD4200C646C4 /* Salary App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Salary App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD824F8A2A33DD4200C646C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD824F8C2A33DD4200C646C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BD824F8E2A33DD4200C646C4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BD824F8E2A33DD4200C646C4 /* SalaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryViewController.swift; sourceTree = "<group>"; };
 		BD824F932A33DD4300C646C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD824F962A33DD4300C646C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD824F982A33DD4300C646C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,10 +50,8 @@
 		BD82511B2A404A5200C646C4 /* SalaryAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SalaryAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD82511D2A404A5200C646C4 /* SalaryAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryAppUITests.swift; sourceTree = "<group>"; };
 		BD82511F2A404A5200C646C4 /* SalaryAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		BD8251272A404FC000C646C4 /* TestIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestIdentifier.swift; sourceTree = "<group>"; };
 		BD972E8C2A4098E0008336F8 /* SalaryAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SalaryAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD972E8E2A4098E0008336F8 /* SalaryAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryAppTests.swift; sourceTree = "<group>"; };
-		BDA8F43A2A45D32F00BC79CA /* SalaryBreakDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryBreakDownView.swift; sourceTree = "<group>"; };
 		BDA8F43C2A46FF0E00BC79CA /* SalaryInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryInfoView.swift; sourceTree = "<group>"; };
 		BDA8F43E2A4705E400BC79CA /* SalaryTotalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryTotalView.swift; sourceTree = "<group>"; };
 		BDA8F4402A471A5800BC79CA /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
@@ -88,12 +82,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BD473EED2A4341AC00A01C30 /* ReusableView */ = {
+		BD3074A62A49E81300E7041D /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				BD473EEE2A4341C700A01C30 /* SalaryReusableView.swift */,
+				BD3074AB2A49E8B300E7041D /* Views */,
 			);
-			path = ReusableView;
+			path = Base;
+			sourceTree = "<group>";
+		};
+		BD3074A72A49E81900E7041D /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				BD3074A92A49E82D00E7041D /* Salary */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		BD3074A92A49E82D00E7041D /* Salary */ = {
+			isa = PBXGroup;
+			children = (
+				BD3074AA2A49E89A00E7041D /* Model */,
+				BD8250462A3B48F900C646C4 /* ViewModel */,
+				BD8250482A3B492200C646C4 /* View */,
+			);
+			path = Salary;
+			sourceTree = "<group>";
+		};
+		BD3074AA2A49E89A00E7041D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BD3074AB2A49E8B300E7041D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BDA8F4402A471A5800BC79CA /* InfoView.swift */,
+				BDA8F43C2A46FF0E00BC79CA /* SalaryInfoView.swift */,
+				BDA8F43E2A4705E400BC79CA /* SalaryTotalView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		BD824F7E2A33DD4200C646C4 = {
@@ -119,13 +148,10 @@
 		BD824F892A33DD4200C646C4 /* Salary App */ = {
 			isa = PBXGroup;
 			children = (
-				BDA8F4392A45D31100BC79CA /* ReusableComponents */,
-				BD8251262A404F9B00C646C4 /* UITestIdentifier */,
-				BD8250482A3B492200C646C4 /* View */,
-				BD8250462A3B48F900C646C4 /* ViewModel */,
+				BD3074A72A49E81900E7041D /* Features */,
+				BD3074A62A49E81300E7041D /* Base */,
 				BD824F8A2A33DD4200C646C4 /* AppDelegate.swift */,
 				BD824F8C2A33DD4200C646C4 /* SceneDelegate.swift */,
-				BD824F8E2A33DD4200C646C4 /* ViewController.swift */,
 				BD824F932A33DD4300C646C4 /* Assets.xcassets */,
 				BD824F952A33DD4300C646C4 /* LaunchScreen.storyboard */,
 				BD824F982A33DD4300C646C4 /* Info.plist */,
@@ -144,7 +170,7 @@
 		BD8250482A3B492200C646C4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BD473EED2A4341AC00A01C30 /* ReusableView */,
+				BD824F8E2A33DD4200C646C4 /* SalaryViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -158,31 +184,12 @@
 			path = SalaryAppUITests;
 			sourceTree = "<group>";
 		};
-		BD8251262A404F9B00C646C4 /* UITestIdentifier */ = {
-			isa = PBXGroup;
-			children = (
-				BD8251272A404FC000C646C4 /* TestIdentifier.swift */,
-			);
-			path = UITestIdentifier;
-			sourceTree = "<group>";
-		};
 		BD972E8D2A4098E0008336F8 /* SalaryAppTests */ = {
 			isa = PBXGroup;
 			children = (
 				BD972E8E2A4098E0008336F8 /* SalaryAppTests.swift */,
 			);
 			path = SalaryAppTests;
-			sourceTree = "<group>";
-		};
-		BDA8F4392A45D31100BC79CA /* ReusableComponents */ = {
-			isa = PBXGroup;
-			children = (
-				BDA8F43A2A45D32F00BC79CA /* SalaryBreakDownView.swift */,
-				BDA8F43C2A46FF0E00BC79CA /* SalaryInfoView.swift */,
-				BDA8F43E2A4705E400BC79CA /* SalaryTotalView.swift */,
-				BDA8F4402A471A5800BC79CA /* InfoView.swift */,
-			);
-			path = ReusableComponents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,12 +322,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD8251282A404FC000C646C4 /* TestIdentifier.swift in Sources */,
 				BDA8F43F2A4705E400BC79CA /* SalaryTotalView.swift in Sources */,
-				BD473EEF2A4341C700A01C30 /* SalaryReusableView.swift in Sources */,
 				BDA8F43D2A46FF0E00BC79CA /* SalaryInfoView.swift in Sources */,
-				BD824F8F2A33DD4200C646C4 /* ViewController.swift in Sources */,
-				BDA8F43B2A45D32F00BC79CA /* SalaryBreakDownView.swift in Sources */,
+				BD824F8F2A33DD4200C646C4 /* SalaryViewController.swift in Sources */,
 				BD824F8B2A33DD4200C646C4 /* AppDelegate.swift in Sources */,
 				BD824F8D2A33DD4200C646C4 /* SceneDelegate.swift in Sources */,
 				BDA8F4412A471A5800BC79CA /* InfoView.swift in Sources */,
