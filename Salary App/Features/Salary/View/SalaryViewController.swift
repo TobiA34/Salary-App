@@ -9,7 +9,7 @@ import UIKit
 import SafariServices
 
 
-class ViewController: UIViewController {
+class SalaryViewController: UIViewController {
     
     private lazy var salaryTextField: UITextField = {
         let  salaryTextField = UITextField()
@@ -80,7 +80,7 @@ class ViewController: UIViewController {
 }
 
 // MARK: Safari Link
-private extension ViewController {
+private extension SalaryViewController {
     
     private func openLink(_ stringURL: String) {
         guard let url = URL(string: stringURL) else {
@@ -100,7 +100,7 @@ private extension ViewController {
 }
 
 // MARK: Layout
-private extension ViewController {
+private extension SalaryViewController {
     func setup() {
         view.backgroundColor = UIColor(named: "darkMode")
         navigationController?.navigationBar.topItem?.title = "My Salary Calculator"
@@ -152,7 +152,7 @@ private extension ViewController {
 
 // MARK: TextField Actions
 
-private extension ViewController {
+private extension SalaryViewController {
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
@@ -175,7 +175,7 @@ private extension ViewController {
     }
 }
 
-extension ViewController: SalaryTotalViewDelegate {
+extension SalaryViewController: SalaryTotalViewDelegate {
     
     func didTapInfo(type: SalaryType) {
         print("user tapped on: \(type)")

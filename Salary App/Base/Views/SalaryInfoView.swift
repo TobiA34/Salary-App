@@ -14,7 +14,6 @@ class SalaryInfoView: UIView {
         salaryDescriptionView.translatesAutoresizingMaskIntoConstraints = false
         salaryDescriptionView.axis = .vertical
         salaryDescriptionView.alignment = .fill
-//        salaryDescriptionView.distribution = .equalSpacing
         return salaryDescriptionView
     }()
     
@@ -33,7 +32,6 @@ class SalaryInfoView: UIView {
         salaryTitle.translatesAutoresizingMaskIntoConstraints = false
         salaryTitle.textColor = .black
         salaryTitle.text = "What is a salary"
-//        salaryTitle.numberOfLines = 0
         salaryTitle.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         return salaryTitle
     }()
