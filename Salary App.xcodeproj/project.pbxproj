@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD3074AD2A4B1ED200E7041D /* SalaryImageInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3074AC2A4B1ED200E7041D /* SalaryImageInfoView.swift */; };
+		BD3074AF2A4B2B4300E7041D /* Salary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3074AE2A4B2B4300E7041D /* Salary.swift */; };
 		BD824F8B2A33DD4200C646C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD824F8A2A33DD4200C646C4 /* AppDelegate.swift */; };
 		BD824F8D2A33DD4200C646C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD824F8C2A33DD4200C646C4 /* SceneDelegate.swift */; };
 		BD824F8F2A33DD4200C646C4 /* SalaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD824F8E2A33DD4200C646C4 /* SalaryViewController.swift */; };
@@ -39,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BD3074AC2A4B1ED200E7041D /* SalaryImageInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryImageInfoView.swift; sourceTree = "<group>"; };
+		BD3074AE2A4B2B4300E7041D /* Salary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Salary.swift; sourceTree = "<group>"; };
 		BD824F872A33DD4200C646C4 /* Salary App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Salary App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD824F8A2A33DD4200C646C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD824F8C2A33DD4200C646C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 		BD3074AA2A49E89A00E7041D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BD3074AE2A4B2B4300E7041D /* Salary.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -121,6 +126,7 @@
 				BDA8F4402A471A5800BC79CA /* InfoView.swift */,
 				BDA8F43C2A46FF0E00BC79CA /* SalaryInfoView.swift */,
 				BDA8F43E2A4705E400BC79CA /* SalaryTotalView.swift */,
+				BD3074AC2A4B1ED200E7041D /* SalaryImageInfoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -324,7 +330,9 @@
 			files = (
 				BDA8F43F2A4705E400BC79CA /* SalaryTotalView.swift in Sources */,
 				BDA8F43D2A46FF0E00BC79CA /* SalaryInfoView.swift in Sources */,
+				BD3074AD2A4B1ED200E7041D /* SalaryImageInfoView.swift in Sources */,
 				BD824F8F2A33DD4200C646C4 /* SalaryViewController.swift in Sources */,
+				BD3074AF2A4B2B4300E7041D /* Salary.swift in Sources */,
 				BD824F8B2A33DD4200C646C4 /* AppDelegate.swift in Sources */,
 				BD824F8D2A33DD4200C646C4 /* SceneDelegate.swift in Sources */,
 				BDA8F4412A471A5800BC79CA /* InfoView.swift in Sources */,

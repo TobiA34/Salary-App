@@ -44,6 +44,8 @@ class SalaryViewController: UIViewController {
         return salaryBreakdownTitle
     }()
     
+ 
+    
     private lazy var monthlyTotalView: SalaryTotalView = {
         let monthlyTotalView = SalaryTotalView(type: .monthly)
         return monthlyTotalView
@@ -69,6 +71,13 @@ class SalaryViewController: UIViewController {
         let salaryInfoVw = SalaryInfoView()
         return salaryInfoVw
     }()
+    
+    
+    private lazy var salaryImageIInfoVw: SalaryImageInfoView = {
+        let salaryImageIInfoVw = SalaryImageInfoView(salary: Salary(title: "Hello", description: "asdsasghsadjhdsagjhsdajhgdgsjajhgsdaghsad", image: "salaryIcon"))
+        return salaryImageIInfoVw
+    }()
+    
     
     private let salaryViewModel = SalaryViewModel()
     
@@ -106,7 +115,7 @@ private extension SalaryViewController {
         navigationController?.navigationBar.topItem?.title = "My Salary Calculator"
         self.navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "info.circle"), style: .plain, target: self, action: #selector(displayAdvice))
-        
+    
         // This is adding padding to the textfield
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 50))
         salaryTextField.leftView = paddingView
@@ -120,11 +129,12 @@ private extension SalaryViewController {
         let doneBarButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissKeyboard))
         keyboardToolbar.items = [flexBarButton, doneBarButton]
         self.salaryTextField.inputAccessoryView = keyboardToolbar
-        
+ 
         monthlyTotalView.delegate = self
-        dailyTotalView.delegate = self
         weeklyTotalView.delegate = self
+        dailyTotalView.delegate = self
         hourlyTotalView.delegate = self
+
         //Laying out the views on the screen
         view.addSubview(stackView)
         
@@ -133,7 +143,7 @@ private extension SalaryViewController {
         stackView.addArrangedSubview(weeklyTotalView)
         stackView.addArrangedSubview(dailyTotalView)
         stackView.addArrangedSubview(hourlyTotalView)
-        
+        stackView.addArrangedSubview(salaryImageIInfoVw)
         stackView.addArrangedSubview(salaryInfoVw)
         
         NSLayoutConstraint.activate([
@@ -143,7 +153,8 @@ private extension SalaryViewController {
             stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,constant: 16),
             stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
             
-            salaryTextField.heightAnchor.constraint(equalToConstant: 44)
+            salaryTextField.heightAnchor.constraint(equalToConstant: 44),
+
             
             
         ])
