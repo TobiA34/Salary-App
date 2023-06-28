@@ -11,6 +11,12 @@ import SafariServices
 
 class SalaryViewController: UIViewController {
     
+    let scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        return scrollView
+    }()
+    
     private lazy var salaryTextField: UITextField = {
         let  salaryTextField = UITextField()
         salaryTextField.placeholder = "Please enter salary"
@@ -78,14 +84,17 @@ class SalaryViewController: UIViewController {
         return salaryImageIInfoVw
     }()
     
-    
+    private lazy var salaryImageIInfoVw2: SalaryImageInfoView = {
+        let salaryImageIInfoVw = SalaryImageInfoView(salary: Salary(title: "Hello", description: "asdsasghsadjhdsagjhsdajhgdgsjajhgsdaghsad", image: "salaryIcon"))
+        return salaryImageIInfoVw
+    }()
     private let salaryViewModel = SalaryViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
     }
-    
+
 }
 
 // MARK: Safari Link
@@ -136,7 +145,8 @@ private extension SalaryViewController {
         hourlyTotalView.delegate = self
 
         //Laying out the views on the screen
-        view.addSubview(stackView)
+        view.addSubview(scrollView)
+        scrollView.addSubview(stackView)
         
         stackView.addArrangedSubview(salaryTextField)
         stackView.addArrangedSubview(monthlyTotalView)
@@ -145,15 +155,22 @@ private extension SalaryViewController {
         stackView.addArrangedSubview(hourlyTotalView)
         stackView.addArrangedSubview(salaryImageIInfoVw)
         stackView.addArrangedSubview(salaryInfoVw)
-        
+        stackView.addArrangedSubview(salaryImageIInfoVw2)
+
         NSLayoutConstraint.activate([
+            scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor,constant: 16),
+            scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,constant: -16),
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             
-            stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor,constant: 16),
-            stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,constant: -16),
-            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,constant: 16),
-            stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
-            
-            salaryTextField.heightAnchor.constraint(equalToConstant: 44),
+            stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            stackView.topAnchor.constraint(equalTo: scrollView.topAnchor,constant: 16),
+            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor,constant: -16),
+
+            stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+
+            salaryTextField.heightAnchor.constraint(equalToConstant: 44)
 
             
             
