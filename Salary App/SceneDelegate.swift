@@ -19,8 +19,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let windowScene = scene as? UIWindowScene{
             
             let window = UIWindow(windowScene: windowScene)
-            let random = SalaryViewController()
-            let navigation = UINavigationController(rootViewController: random)
+            let formVC = SalaryFormViewController()
+            let navigation = UINavigationController(rootViewController: formVC)
             window.rootViewController = navigation
             self.window = window
             window.makeKeyAndVisible()
