@@ -19,13 +19,9 @@ class SalaryBreakDownViewController: UIViewController {
         return stackView
     }()
     
-    private lazy var monthlyStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.alignment = .fill
-        stackView.distribution = .equalSpacing
+    private lazy var monthlyStackView: SalaryHorizontalStackView = {
+        let stackView = SalaryHorizontalStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.spacing = 24
         return stackView
     }()
     private lazy var salaryMonthlyLbl: UILabel = {
@@ -34,13 +30,9 @@ class SalaryBreakDownViewController: UIViewController {
         return salaryMonthlyLbl
     }()
     
-    private lazy var yearlyStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.alignment = .fill
-        stackView.distribution = .equalSpacing
+    private lazy var yearlyStackView: SalaryHorizontalStackView = {
+        let stackView = SalaryHorizontalStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.spacing = 24
         return stackView
     }()
     private lazy var salaryYearlyLbl: UILabel = {
@@ -49,13 +41,9 @@ class SalaryBreakDownViewController: UIViewController {
         return salaryYearlyLbl
     }()
     
-    private lazy var dailyStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.alignment = .fill
-        stackView.distribution = .equalSpacing
+    private lazy var dailyStackView: SalaryHorizontalStackView = {
+        let stackView = SalaryHorizontalStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.spacing = 24
         return stackView
     }()
     private lazy var salaryDailyLbl: UILabel = {
@@ -64,13 +52,9 @@ class SalaryBreakDownViewController: UIViewController {
         return salaryDailyLbl
     }()
     
-    private lazy var weeklyStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.alignment = .fill
-        stackView.distribution = .equalSpacing
+    private lazy var weeklyStackView: SalaryHorizontalStackView = {
+        let stackView = SalaryHorizontalStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.spacing = 24
         return stackView
     }()
     private lazy var salaryWeeklyLbl: UILabel = {
@@ -80,13 +64,9 @@ class SalaryBreakDownViewController: UIViewController {
     }()
     
     
-    private lazy var hourlyStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.alignment = .fill
-        stackView.distribution = .equalSpacing
+    private lazy var hourlyStackView: SalaryHorizontalStackView = {
+        let stackView = SalaryHorizontalStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.spacing = 24
         return stackView
     }()
     private lazy var salaryHourlyLbl: UILabel = {
@@ -96,13 +76,9 @@ class SalaryBreakDownViewController: UIViewController {
     }()
     
     
-    private lazy var taxStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.alignment = .fill
-        stackView.distribution = .equalSpacing
+    private lazy var taxStackView: SalaryHorizontalStackView = {
+        let stackView = SalaryHorizontalStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.spacing = 24
         return stackView
     }()
     private lazy var taxLbl: UILabel = {
@@ -112,13 +88,9 @@ class SalaryBreakDownViewController: UIViewController {
     }()
 
     
-    private lazy var niStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.alignment = .fill
-        stackView.distribution = .equalSpacing
+    private lazy var niStackView: SalaryHorizontalStackView = {
+        let stackView = SalaryHorizontalStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.spacing = 24
         return stackView
     }()
     private lazy var niLbl: UILabel = {
@@ -127,13 +99,9 @@ class SalaryBreakDownViewController: UIViewController {
         return niLbl
     }()
     
-    private lazy var studentLoanStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.alignment = .fill
-        stackView.distribution = .equalSpacing
+    private lazy var studentLoanStackView: SalaryHorizontalStackView = {
+        let stackView = SalaryHorizontalStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.spacing = 24
         return stackView
     }()
     
@@ -151,19 +119,26 @@ class SalaryBreakDownViewController: UIViewController {
         return infoBtn
     }()
     
-    private lazy var originalStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.alignment = .fill
-        stackView.distribution = .equalSpacing
+    private lazy var originalStackView: SalaryHorizontalStackView = {
+        let stackView = SalaryHorizontalStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.spacing = 24
         return stackView
     }()
     private lazy var originalSalaryLbl: UILabel = {
         let originalSalaryLbl = UILabel()
         originalSalaryLbl.translatesAutoresizingMaskIntoConstraints = false
         return originalSalaryLbl
+    }()
+    
+    
+    private lazy var numberFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.maximumFractionDigits = 2
+        formatter.minimumFractionDigits = 2
+        formatter.currencyCode = Locale.current.language.region?.identifier
+        formatter.numberStyle = .currency
+        formatter.locale = Locale(identifier: "en_GB")
+        return formatter
     }()
 
     
@@ -236,26 +211,24 @@ extension SalaryBreakDownViewController {
             
         ])
         
-        originalSalaryLbl.text = "Orignial salary: £\(salaryBreakdown.originalSalary)"
+        guard let formattedSalary =  numberFormatter.string(for: salaryBreakdown.originalSalary) else {return}
+        guard let formattedMonthly =  numberFormatter.string(for: salaryBreakdown.monthlySalary) else {return}
+        guard let formattedHourly =  numberFormatter.string(for: salaryBreakdown.hourlySalary) else {return}
+        guard let formattedWeekly =  numberFormatter.string(for: salaryBreakdown.weeklySalary) else {return}
+        guard let formattedTax =  numberFormatter.string(for: salaryBreakdown.tax) else {return}
+        guard let formattedSalaryDaily =  numberFormatter.string(for: salaryBreakdown.dailySalary) else {return}
+        guard let formattedNI =  numberFormatter.string(for: salaryBreakdown.ni) else {return}
+        guard let formattedStudentLoan =  numberFormatter.string(for: salaryBreakdown.studentLoan) else {return}
 
-        salaryMonthlyLbl.text = "Monthly Total: £\(salaryBreakdown.monthlySalary)"
-        salaryHourlyLbl.text = "Hourly Total: £\(salaryBreakdown.hourlySalary)"
-        salaryWeeklyLbl.text = "Weekly Total: £\(salaryBreakdown.weeklySalary)"
-        taxLbl.text = "Tax: £\(salaryBreakdown.tax)"
-        salaryDailyLbl.text = "Daily Total £\(salaryBreakdown.dailySalary)"
-        niLbl.text = "National Insurance £\(salaryBreakdown.ni)"
-        studentLoanLbl.text = "Student Loan £\(salaryBreakdown.studentLoan)"
-        
-//        originalSalaryLbl.text = "Orignial salary: £\(originalSalary)"
-//
-//        salaryMonthlyLbl.text = "Monthly Total: £\(monthlySalary)"
-//        salaryHourlyLbl.text = "Hourly Total: £\(hourlySalary)"
-//        salaryWeeklyLbl.text = "Weekly Total: £\(weeklySalary)"
-//        taxLbl.text = "Tax: £\(tax)"
-//        salaryDailyLbl.text = "Daily Total £\(dailySalary)"
-//        niLbl.text = "National Insurance £\(ni)"
-//        studentLoanLbl.text = "Student Loan £\(studentLoan)"
-
+        originalSalaryLbl.text = "Orignial salary: \(String(describing: formattedSalary))"
+        salaryMonthlyLbl.text = "Monthly Total: \(String(describing: formattedMonthly))"
+        salaryHourlyLbl.text = "Hourly Total: \(String(describing: formattedHourly))"
+        salaryWeeklyLbl.text = "Weekly Total: \(String(describing: formattedWeekly))"
+        taxLbl.text = "Tax: \(String(describing: formattedTax))"
+        salaryDailyLbl.text = "Daily Total: \(String(describing: formattedSalaryDaily))"
+        niLbl.text = "National Insurance: \(String(describing: formattedNI))"
+        studentLoanLbl.text = "Student Loan: \(String(describing: formattedStudentLoan))"
+  
     }
     
 }

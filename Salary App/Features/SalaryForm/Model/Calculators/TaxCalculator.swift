@@ -7,15 +7,13 @@
 
 import Foundation
 
-enum TaxBracket {
-    case PersonalAllowance
-    case BasicRate
-    case HigherRate
-    case AdditionalRate
-}
-
+ 
 struct TaxCalculator {
-
+    
+    /// Calculate user tax based on salary
+    /// - Parameters:
+    ///   - salary: User salary as a decimal representation
+    /// - Returns: Final calculated tax
     func calculate(salary: Double) -> Double {
         if salary <= 12570 {
           //Monthly Tax = (Annual Salary * Tax Rate) / 12

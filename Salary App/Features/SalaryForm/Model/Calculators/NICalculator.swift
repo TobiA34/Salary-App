@@ -9,14 +9,15 @@ import Foundation
 
 struct NICalaculator {
     
+    /// Calculate user ni based on salary
+    /// - Parameters:
+    ///   - salary: User salary as a decimal representation
+    /// - Returns: Final calculated ni
     func calculate(salary: Double) -> Double {
-       // £30,000 - £9,568 = £20,432
-      // (£20,432 * 0.12) / 12 = £204.32
-
+       // £9,568 represents the primary threshold
         let ni = salary - 9568
         let total = (ni * 0.12)/12
-        let doubleStr = String(format: "%.2f", total) // "3.14"
-
-        return Double(doubleStr) ?? 0
+        let result = floor(total*100)/100
+        return result
     }
 }

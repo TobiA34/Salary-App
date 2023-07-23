@@ -9,9 +9,12 @@ import Foundation
 
 struct PensionContributionCalculator {
     
-    func calculate(salary: Double, percentage: Double) -> Double? {
-        // Monthly = 30,000 * 0.2 / 12 = 500
-        let totalPercentage = percentage / 100 // 0.2
+    /// Calculate user pension contribution based on salary
+    /// - Parameters:
+    ///   - salary: User salary as a decimal representation
+    /// - Returns: Final calculated pension contribution
+    func calculate(salary: Double, pensionPercentage: Double) -> Double? {
+        let totalPercentage = pensionPercentage / 100
         let monthlyContribution = (salary * totalPercentage) / 12
         return monthlyContribution
     

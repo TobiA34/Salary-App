@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		BD3074AD2A4B1ED200E7041D /* SalaryImageInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3074AC2A4B1ED200E7041D /* SalaryImageInfoView.swift */; };
 		BD3074AF2A4B2B4300E7041D /* Salary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3074AE2A4B2B4300E7041D /* Salary.swift */; };
+		BD6B45622A6592B600459619 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6B45612A6592B600459619 /* UIViewController+Alert.swift */; };
+		BD6B45642A659DE200459619 /* SalaryHorizontalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6B45632A659DE200459619 /* SalaryHorizontalStackView.swift */; };
 		BD824F8B2A33DD4200C646C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD824F8A2A33DD4200C646C4 /* AppDelegate.swift */; };
 		BD824F8D2A33DD4200C646C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD824F8C2A33DD4200C646C4 /* SceneDelegate.swift */; };
 		BD824F8F2A33DD4200C646C4 /* SalaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD824F8E2A33DD4200C646C4 /* SalaryViewController.swift */; };
@@ -52,6 +54,8 @@
 /* Begin PBXFileReference section */
 		BD3074AC2A4B1ED200E7041D /* SalaryImageInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryImageInfoView.swift; sourceTree = "<group>"; };
 		BD3074AE2A4B2B4300E7041D /* Salary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Salary.swift; sourceTree = "<group>"; };
+		BD6B45612A6592B600459619 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		BD6B45632A659DE200459619 /* SalaryHorizontalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryHorizontalStackView.swift; sourceTree = "<group>"; };
 		BD824F872A33DD4200C646C4 /* Salary App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Salary App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD824F8A2A33DD4200C646C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD824F8C2A33DD4200C646C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +111,7 @@
 		BD3074A62A49E81300E7041D /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				BD6B45602A65928700459619 /* Extensions */,
 				BD3074AB2A49E8B300E7041D /* Views */,
 			);
 			path = Base;
@@ -147,8 +152,17 @@
 				BDA8F43C2A46FF0E00BC79CA /* SalaryInfoView.swift */,
 				BDA8F43E2A4705E400BC79CA /* SalaryTotalView.swift */,
 				BD3074AC2A4B1ED200E7041D /* SalaryImageInfoView.swift */,
+				BD6B45632A659DE200459619 /* SalaryHorizontalStackView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		BD6B45602A65928700459619 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BD6B45612A6592B600459619 /* UIViewController+Alert.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		BD824F7E2A33DD4200C646C4 = {
@@ -404,6 +418,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD84C1362A5EDB2A00684744 /* SalaryFormViewModel.swift in Sources */,
+				BD6B45642A659DE200459619 /* SalaryHorizontalStackView.swift in Sources */,
 				BD84C1272A5ED90300684744 /* SalaryForm.swift in Sources */,
 				BD84C13A2A5EDB9200684744 /* SalaryBreakDownViewController.swift in Sources */,
 				BD84C1252A5ED84200684744 /* ValidationManager.swift in Sources */,
@@ -420,6 +435,7 @@
 				BDA8F4412A471A5800BC79CA /* InfoView.swift in Sources */,
 				BD84C1302A5ED9A100684744 /* PensionContributionCalculator.swift in Sources */,
 				BD84C1382A5EDB7E00684744 /* SalaryFormViewController.swift in Sources */,
+				BD6B45622A6592B600459619 /* UIViewController+Alert.swift in Sources */,
 				BD8250452A3B412200C646C4 /* SalaryViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
