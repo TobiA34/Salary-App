@@ -34,7 +34,6 @@ final class SalaryAppUITests: XCTestCase {
         salaryTextField.typeText("540000")
         sleep(5)
         
-        //Test should fail
         XCTAssertEqual(salaryTextField.value as! String, "340000")
         
     }

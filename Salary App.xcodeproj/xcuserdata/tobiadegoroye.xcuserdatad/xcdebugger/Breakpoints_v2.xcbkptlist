@@ -3,4 +3,262 @@
    uuid = "AD5B420B-856E-4411-A955-E7E1B14755BF"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B71C1A51-3FE6-4393-B3D5-B978421DC998"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Salary App/Features/SalaryForm/ViewModel/SalaryFormViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "calculateMonthlySalary(input:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F46389AB-54C0-488F-93FE-2AE15507A5CA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Salary App/Features/SalaryForm/Model/Calculators/TaxCalculator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "calculate(salary:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F46389AB-54C0-488F-93FE-2AE15507A5CA - 6e4d6ed99dbf08df"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Salary_App.TaxCalculator.calculate(salary: Swift.Double) -&gt; Swift.Double"
+                  moduleName = "Salary App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tobiadegoroye/Documents/Small%20project%20-%20Swift/Salary-App/Salary%20App/Features/SalaryForm/Model/Calculators/TaxCalculator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "372">
+               </Location>
+               <Location
+                  uuid = "F46389AB-54C0-488F-93FE-2AE15507A5CA - 6e4d6ed99dbf08fe"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Salary_App.TaxCalculator.calculate(salary: Swift.Double) -&gt; Swift.Double"
+                  moduleName = "Salary App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tobiadegoroye/Documents/Small%20project%20-%20Swift/Salary-App/Salary%20App/Features/SalaryForm/Model/Calculators/TaxCalculator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "372">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "38CA8589-9667-4811-B940-7AE2E31C00CA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Salary App/Features/SalaryForm/Model/Calculators/TaxCalculator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "calculate(salary:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "38CA8589-9667-4811-B940-7AE2E31C00CA - 6e4d6ed99dbf0b38"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Salary_App.TaxCalculator.calculate(salary: Swift.Double) -&gt; Swift.Double"
+                  moduleName = "Salary App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tobiadegoroye/Documents/Small%20project%20-%20Swift/Salary-App/Salary%20App/Features/SalaryForm/Model/Calculators/TaxCalculator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "396">
+               </Location>
+               <Location
+                  uuid = "38CA8589-9667-4811-B940-7AE2E31C00CA - 6e4d6ed99dbf0b19"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Salary_App.TaxCalculator.calculate(salary: Swift.Double) -&gt; Swift.Double"
+                  moduleName = "Salary App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tobiadegoroye/Documents/Small%20project%20-%20Swift/Salary-App/Salary%20App/Features/SalaryForm/Model/Calculators/TaxCalculator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "396">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7F1F4C16-B5CA-4123-B8AB-3C6292FC9F8B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Salary App/Features/SalaryForm/ViewModel/SalaryFormViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "calculateDailySalary(input:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "52A611F4-F315-49D9-A3D3-E011A8D815E9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Salary App/Features/SalaryForm/View/SalaryFormViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
+            landmarkName = "didCalculate(id:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "52A611F4-F315-49D9-A3D3-E011A8D815E9 - af9bd748f686c15c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Salary_App.SalaryFormViewController.didCalculate(id: Swift.String) -&gt; ()"
+                  moduleName = "Salary App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tobiadegoroye/Documents/Small%20project%20-%20Swift/Salary-App/Salary%20App/Features/SalaryForm/View/SalaryFormViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "194"
+                  endingLineNumber = "194"
+                  offsetFromSymbolStart = "2216">
+               </Location>
+               <Location
+                  uuid = "52A611F4-F315-49D9-A3D3-E011A8D815E9 - af9bd748f686c13d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Salary_App.SalaryFormViewController.didCalculate(id: Swift.String) -&gt; ()"
+                  moduleName = "Salary App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tobiadegoroye/Documents/Small%20project%20-%20Swift/Salary-App/Salary%20App/Features/SalaryForm/View/SalaryFormViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "193"
+                  endingLineNumber = "193"
+                  offsetFromSymbolStart = "2008">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "36080627-4C1B-487F-8EE6-54AD1F61994C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Salary App/Base/Views/SalaryForm/ButtonView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "calculateSalary()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "04101DC2-D54D-4819-B200-7FF60C352873"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Salary App/Features/SalaryForm/View/SalaryFormViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "209"
+            endingLineNumber = "209"
+            landmarkName = "didCalculate(id:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D39F1D6B-6F83-4842-B5F4-5F532557EA63"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Salary App/Features/SalaryForm/View/SalaryFormViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "204"
+            endingLineNumber = "204"
+            landmarkName = "didCalculate(id:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D39F1D6B-6F83-4842-B5F4-5F532557EA63 - af9bd748f686c493"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Salary_App.SalaryFormViewController.didCalculate(id: Swift.String) -&gt; ()"
+                  moduleName = "Salary App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tobiadegoroye/Documents/Small%20project%20-%20Swift/Salary-App/Salary%20App/Features/SalaryForm/View/SalaryFormViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "211"
+                  endingLineNumber = "211"
+                  offsetFromSymbolStart = "2172">
+               </Location>
+               <Location
+                  uuid = "D39F1D6B-6F83-4842-B5F4-5F532557EA63 - af9bd748f686c34d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Salary_App.SalaryFormViewController.didCalculate(id: Swift.String) -&gt; ()"
+                  moduleName = "Salary App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tobiadegoroye/Documents/Small%20project%20-%20Swift/Salary-App/Salary%20App/Features/SalaryForm/View/SalaryFormViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "209"
+                  endingLineNumber = "209"
+                  offsetFromSymbolStart = "3640">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

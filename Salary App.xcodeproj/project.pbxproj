@@ -8,15 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		BD3074AD2A4B1ED200E7041D /* SalaryImageInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3074AC2A4B1ED200E7041D /* SalaryImageInfoView.swift */; };
-		BD3074AF2A4B2B4300E7041D /* Salary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3074AE2A4B2B4300E7041D /* Salary.swift */; };
+		BD4A5EA22A72747300033A42 /* AccordionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4A5EA12A72747300033A42 /* AccordionView.swift */; };
+		BD4A5EA62A727E6D00033A42 /* SalaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4A5EA52A727E6D00033A42 /* SalaryView.swift */; };
+		BD4A5EA82A727E7800033A42 /* PensionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4A5EA72A727E7800033A42 /* PensionView.swift */; };
+		BD4A5EAA2A727E8500033A42 /* TaxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4A5EA92A727E8500033A42 /* TaxView.swift */; };
+		BD4A5EAC2A727E9B00033A42 /* StudentLoanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4A5EAB2A727E9B00033A42 /* StudentLoanView.swift */; };
+		BD4A5EB02A73CCCE00033A42 /* SubmitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4A5EAF2A73CCCE00033A42 /* SubmitView.swift */; };
+		BD4A5EB32A77F5D600033A42 /* FormInputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4A5EB22A77F5D600033A42 /* FormInputDelegate.swift */; };
+		BD4A5EB62A79433100033A42 /* InputManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4A5EB52A79433100033A42 /* InputManager.swift */; };
 		BD6B45622A6592B600459619 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6B45612A6592B600459619 /* UIViewController+Alert.swift */; };
 		BD6B45642A659DE200459619 /* SalaryHorizontalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6B45632A659DE200459619 /* SalaryHorizontalStackView.swift */; };
 		BD824F8B2A33DD4200C646C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD824F8A2A33DD4200C646C4 /* AppDelegate.swift */; };
 		BD824F8D2A33DD4200C646C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD824F8C2A33DD4200C646C4 /* SceneDelegate.swift */; };
-		BD824F8F2A33DD4200C646C4 /* SalaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD824F8E2A33DD4200C646C4 /* SalaryViewController.swift */; };
 		BD824F942A33DD4300C646C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD824F932A33DD4300C646C4 /* Assets.xcassets */; };
 		BD824F972A33DD4300C646C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD824F952A33DD4300C646C4 /* LaunchScreen.storyboard */; };
-		BD8250452A3B412200C646C4 /* SalaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8250442A3B412200C646C4 /* SalaryViewModel.swift */; };
 		BD82511E2A404A5200C646C4 /* SalaryAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD82511D2A404A5200C646C4 /* SalaryAppUITests.swift */; };
 		BD8251202A404A5200C646C4 /* SalaryAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD82511F2A404A5200C646C4 /* SalaryAppUITestsLaunchTests.swift */; };
 		BD84C1252A5ED84200684744 /* ValidationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD84C1242A5ED84200684744 /* ValidationManager.swift */; };
@@ -53,17 +58,22 @@
 
 /* Begin PBXFileReference section */
 		BD3074AC2A4B1ED200E7041D /* SalaryImageInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryImageInfoView.swift; sourceTree = "<group>"; };
-		BD3074AE2A4B2B4300E7041D /* Salary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Salary.swift; sourceTree = "<group>"; };
+		BD4A5EA12A72747300033A42 /* AccordionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionView.swift; sourceTree = "<group>"; };
+		BD4A5EA52A727E6D00033A42 /* SalaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryView.swift; sourceTree = "<group>"; };
+		BD4A5EA72A727E7800033A42 /* PensionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PensionView.swift; sourceTree = "<group>"; };
+		BD4A5EA92A727E8500033A42 /* TaxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxView.swift; sourceTree = "<group>"; };
+		BD4A5EAB2A727E9B00033A42 /* StudentLoanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLoanView.swift; sourceTree = "<group>"; };
+		BD4A5EAF2A73CCCE00033A42 /* SubmitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitView.swift; sourceTree = "<group>"; };
+		BD4A5EB22A77F5D600033A42 /* FormInputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormInputDelegate.swift; sourceTree = "<group>"; };
+		BD4A5EB52A79433100033A42 /* InputManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputManager.swift; sourceTree = "<group>"; };
 		BD6B45612A6592B600459619 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		BD6B45632A659DE200459619 /* SalaryHorizontalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryHorizontalStackView.swift; sourceTree = "<group>"; };
 		BD824F872A33DD4200C646C4 /* Salary App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Salary App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD824F8A2A33DD4200C646C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD824F8C2A33DD4200C646C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BD824F8E2A33DD4200C646C4 /* SalaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryViewController.swift; sourceTree = "<group>"; };
 		BD824F932A33DD4300C646C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD824F962A33DD4300C646C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD824F982A33DD4300C646C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BD8250442A3B412200C646C4 /* SalaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryViewModel.swift; sourceTree = "<group>"; };
 		BD82511B2A404A5200C646C4 /* SalaryAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SalaryAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD82511D2A404A5200C646C4 /* SalaryAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryAppUITests.swift; sourceTree = "<group>"; };
 		BD82511F2A404A5200C646C4 /* SalaryAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -121,33 +131,15 @@
 			isa = PBXGroup;
 			children = (
 				BD84C1312A5EDAC500684744 /* SalaryForm */,
-				BD84C1232A5ED83200684744 /* ValidationManager */,
-				BD3074A92A49E82D00E7041D /* Salary */,
 			);
 			path = Features;
-			sourceTree = "<group>";
-		};
-		BD3074A92A49E82D00E7041D /* Salary */ = {
-			isa = PBXGroup;
-			children = (
-				BD3074AA2A49E89A00E7041D /* Model */,
-				BD8250462A3B48F900C646C4 /* ViewModel */,
-				BD8250482A3B492200C646C4 /* View */,
-			);
-			path = Salary;
-			sourceTree = "<group>";
-		};
-		BD3074AA2A49E89A00E7041D /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				BD3074AE2A4B2B4300E7041D /* Salary.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		BD3074AB2A49E8B300E7041D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BD4A5EA42A727E4400033A42 /* SalaryBreakdown */,
+				BD4A5EA32A727E3800033A42 /* SalaryForm */,
 				BDA8F4402A471A5800BC79CA /* InfoView.swift */,
 				BDA8F43C2A46FF0E00BC79CA /* SalaryInfoView.swift */,
 				BDA8F43E2A4705E400BC79CA /* SalaryTotalView.swift */,
@@ -155,6 +147,42 @@
 				BD6B45632A659DE200459619 /* SalaryHorizontalStackView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		BD4A5EA32A727E3800033A42 /* SalaryForm */ = {
+			isa = PBXGroup;
+			children = (
+				BD4A5EA52A727E6D00033A42 /* SalaryView.swift */,
+				BD4A5EA72A727E7800033A42 /* PensionView.swift */,
+				BD4A5EA92A727E8500033A42 /* TaxView.swift */,
+				BD4A5EAB2A727E9B00033A42 /* StudentLoanView.swift */,
+				BD4A5EAF2A73CCCE00033A42 /* SubmitView.swift */,
+			);
+			path = SalaryForm;
+			sourceTree = "<group>";
+		};
+		BD4A5EA42A727E4400033A42 /* SalaryBreakdown */ = {
+			isa = PBXGroup;
+			children = (
+				BD4A5EA12A72747300033A42 /* AccordionView.swift */,
+			);
+			path = SalaryBreakdown;
+			sourceTree = "<group>";
+		};
+		BD4A5EB12A77F5BD00033A42 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				BD4A5EB22A77F5D600033A42 /* FormInputDelegate.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		BD4A5EB42A79431A00033A42 /* InputManager */ = {
+			isa = PBXGroup;
+			children = (
+				BD4A5EB52A79433100033A42 /* InputManager.swift */,
+			);
+			path = InputManager;
 			sourceTree = "<group>";
 		};
 		BD6B45602A65928700459619 /* Extensions */ = {
@@ -199,22 +227,6 @@
 			path = "Salary App";
 			sourceTree = "<group>";
 		};
-		BD8250462A3B48F900C646C4 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				BD8250442A3B412200C646C4 /* SalaryViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		BD8250482A3B492200C646C4 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				BD824F8E2A33DD4200C646C4 /* SalaryViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		BD82511C2A404A5200C646C4 /* SalaryAppUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,6 +258,9 @@
 		BD84C1312A5EDAC500684744 /* SalaryForm */ = {
 			isa = PBXGroup;
 			children = (
+				BD84C1232A5ED83200684744 /* ValidationManager */,
+				BD4A5EB42A79431A00033A42 /* InputManager */,
+				BD4A5EB12A77F5BD00033A42 /* Protocol */,
 				BD84C1322A5EDAD500684744 /* Model */,
 				BD84C1342A5EDAE400684744 /* ViewModel */,
 				BD84C1332A5EDADA00684744 /* View */,
@@ -417,26 +432,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD4A5EB62A79433100033A42 /* InputManager.swift in Sources */,
 				BD84C1362A5EDB2A00684744 /* SalaryFormViewModel.swift in Sources */,
+				BD4A5EB02A73CCCE00033A42 /* SubmitView.swift in Sources */,
 				BD6B45642A659DE200459619 /* SalaryHorizontalStackView.swift in Sources */,
 				BD84C1272A5ED90300684744 /* SalaryForm.swift in Sources */,
 				BD84C13A2A5EDB9200684744 /* SalaryBreakDownViewController.swift in Sources */,
 				BD84C1252A5ED84200684744 /* ValidationManager.swift in Sources */,
+				BD4A5EA62A727E6D00033A42 /* SalaryView.swift in Sources */,
+				BD4A5EAC2A727E9B00033A42 /* StudentLoanView.swift in Sources */,
 				BDA8F43F2A4705E400BC79CA /* SalaryTotalView.swift in Sources */,
 				BD84C12B2A5ED93D00684744 /* NICalculator.swift in Sources */,
 				BDA8F43D2A46FF0E00BC79CA /* SalaryInfoView.swift in Sources */,
 				BD3074AD2A4B1ED200E7041D /* SalaryImageInfoView.swift in Sources */,
 				BD84C1292A5ED92600684744 /* TaxCalculator.swift in Sources */,
-				BD824F8F2A33DD4200C646C4 /* SalaryViewController.swift in Sources */,
-				BD3074AF2A4B2B4300E7041D /* Salary.swift in Sources */,
+				BD4A5EA22A72747300033A42 /* AccordionView.swift in Sources */,
+				BD4A5EB32A77F5D600033A42 /* FormInputDelegate.swift in Sources */,
+				BD4A5EA82A727E7800033A42 /* PensionView.swift in Sources */,
 				BD824F8B2A33DD4200C646C4 /* AppDelegate.swift in Sources */,
 				BD824F8D2A33DD4200C646C4 /* SceneDelegate.swift in Sources */,
 				BD84C12E2A5ED97600684744 /* StudentLoanCalculator.swift in Sources */,
 				BDA8F4412A471A5800BC79CA /* InfoView.swift in Sources */,
 				BD84C1302A5ED9A100684744 /* PensionContributionCalculator.swift in Sources */,
 				BD84C1382A5EDB7E00684744 /* SalaryFormViewController.swift in Sources */,
+				BD4A5EAA2A727E8500033A42 /* TaxView.swift in Sources */,
 				BD6B45622A6592B600459619 /* UIViewController+Alert.swift in Sources */,
-				BD8250452A3B412200C646C4 /* SalaryViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

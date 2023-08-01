@@ -24,34 +24,41 @@ struct StudentLoanCalculator {
     func calculate(salary: Double,studentLoanPlan: StudentLoanPlan) -> Double {
         let normalRate = 0.09
         let postgraduateRate = 0.06
+        var newResult = 0.0
  
         switch studentLoanPlan {
         case .planOne:
-            let monthlySalary =  salary / 12
-            let result = monthlySalary - 1834
-            let newResult = result * normalRate
-            return newResult
+            if salary >= 22015 {
+                let monthlySalary =  salary / 12
+                let result = monthlySalary - 1834
+                newResult = result * normalRate
+             }
         case .planTwo:
-            let monthlySalary =  salary / 12
-            let result = monthlySalary - 2274
-            let newResult = result * normalRate
-            return newResult
-        case .planFour:
-            let monthlySalary =  salary / 12
-            let result = monthlySalary - 2305
-            let newResult = result * normalRate
-            return newResult
-        case .planFive:
-            let monthlySalary =  salary / 12
-            let result = monthlySalary - 2083
-            let newResult = result * normalRate
-            return newResult
-        case .postgraduateLoan:
-            let monthlySalary =  salary / 12
-            let result = monthlySalary - 1750
-            let newResult = result * postgraduateRate
-            return newResult
-        }
+            if salary >= 27295 {
+                let monthlySalary =  salary / 12
+                let result = monthlySalary - 2274
+                newResult = result * normalRate
+            }
+         case .planFour:
+            if salary >= 27660 {
+                let monthlySalary =  salary / 12
+                let result = monthlySalary - 2305
+                newResult = result * normalRate
+            }
+         case .planFive:
+            if salary >= 25000 {
+                let monthlySalary =  salary / 12
+                let result = monthlySalary - 2083
+                newResult = result * normalRate
+            }
+         case .postgraduateLoan:
+            if salary >= 21000 {
+                let monthlySalary =  salary / 12
+                let result = monthlySalary - 1750
+                newResult = result * postgraduateRate
+            }
+         }
+        return newResult
     }
 }
 

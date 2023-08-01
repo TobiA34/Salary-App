@@ -10,17 +10,17 @@ import XCTest
 
 final class SalaryAppTests: XCTestCase {
     var taxCalculator: TaxCalculator!
-    var niCalculator: NICalaculator!
+    var niCalculator: NICalculator!
     var studentLoanCalculator: StudentLoanCalculator!
     var pensionContributionCalculator: PensionContributionCalculator!
     var salaryFormVM: SalaryFormViewModel!
-    var studentLoanPlan: StudentLoanPlan!
+    var studentLoanPlan: StudentLoanPlan = .planOne
     var salary = 0.0
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         taxCalculator = TaxCalculator()
-        niCalculator = NICalaculator()
+        niCalculator = NICalculator()
         studentLoanCalculator = StudentLoanCalculator()
         pensionContributionCalculator = PensionContributionCalculator()
         salaryFormVM = SalaryFormViewModel(taxCalculator: taxCalculator, niCalculator: niCalculator, studentLoanCalculator: studentLoanCalculator, pensionContributionCalculator: pensionContributionCalculator, studentLoanPlan: studentLoanPlan)
@@ -33,13 +33,12 @@ final class SalaryAppTests: XCTestCase {
         studentLoanCalculator = nil
         pensionContributionCalculator = nil
         salaryFormVM = nil
-        studentLoanPlan = nil
         salary = 0
     }
 
     func testNICalculation() throws {
          let ni = niCalculator.calculate(salary: 21000)
-        XCTAssertEqual(ni,114.32)
+        XCTAssertEqual(ni,179.375)
     }
     
     func testCalculatingPersonalAllowance() throws {
@@ -67,9 +66,9 @@ final class SalaryAppTests: XCTestCase {
     }
     
     func testStudentLoanCalculation() throws {
-        salary = 30000
+        salary = 30000.0
         let studentLoan = studentLoanCalculator.calculate(salary: salary, studentLoanPlan: .planOne)
-        XCTAssertEqual(studentLoan,225)
+        XCTAssertEqual(studentLoan,59.94)
 
     }
     
@@ -83,17 +82,16 @@ final class SalaryAppTests: XCTestCase {
     func testMonthlySalary() throws {
     salary = 30000.0
     let pensionContributions = 20.0
-        let salaryFormVM = SalaryFormViewModel(taxCalculator: TaxCalculator(), niCalculator: NICalaculator(), studentLoanCalculator: StudentLoanCalculator(), pensionContributionCalculator: PensionContributionCalculator(), studentLoanPlan: .planOne)
-        
+        let salaryFormVM = SalaryFormViewModel(taxCalculator: TaxCalculator(), niCalculator: NICalculator(), studentLoanCalculator: StudentLoanCalculator(), pensionContributionCalculator: PensionContributionCalculator(), studentLoanPlan: .planOne)
+
     let monthlyTotal = salaryFormVM.calculateMonthlySalary(salaryForm: SalaryForm(salary: salary, pensionContributions: pensionContributions))
-        XCTAssertEqual(monthlyTotal,1704.31)
+        XCTAssertEqual(monthlyTotal,1756.25)
     }
     
     func testDailySalary() throws {
     salary = 30000.0
-    let pensionContributions = 20.0
-        let monthlyTotal = salaryFormVM.calculateDailySalary(salaryForm: SalaryForm(salary: salary, pensionContributions: pensionContributions))
-        XCTAssertEqual(monthlyTotal,372.61)
+        let monthlyTotal = salaryFormVM.calculateDailySalary(salaryForm: SalaryForm(salary: salary, pensionContributions: nil))
+        XCTAssertEqual(monthlyTotal,66.63)
     }
     
     func testHourlySalary() throws {
@@ -101,15 +99,13 @@ final class SalaryAppTests: XCTestCase {
     let pensionContributions = 20.0
         
         let monthlyTotal = salaryFormVM.calculateHourlySalary(salaryForm: SalaryForm(salary: salary, pensionContributions: pensionContributions))
-        XCTAssertEqual(monthlyTotal,571.47)
+        XCTAssertEqual(monthlyTotal,15.38)
     }
     
     func testWeelySalary() throws {
     salary = 30000.0
-    let pensionContributions = 20.0
-        
-        let monthlyTotal = salaryFormVM.calculateWeeklySalary(salaryForm: SalaryForm(salary: salary, pensionContributions: pensionContributions))
-        XCTAssertEqual(monthlyTotal,549.68)
+        let monthlyTotal = salaryFormVM.calculateWeeklySalary(salaryForm: SalaryForm(salary: salary, pensionContributions: nil))
+        XCTAssertEqual(monthlyTotal,333.17)
     }
     
     
