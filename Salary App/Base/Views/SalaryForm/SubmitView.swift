@@ -9,7 +9,7 @@ import UIKit
 
 class SubmitView: UIView {
     
-    weak var delegate: ButtonViewDelegate!
+    weak var delegate: ButtonViewDelegate?
     private var id: String
     
     private lazy var calculateBtn: UIButton = {
@@ -23,10 +23,8 @@ class SubmitView: UIView {
     }()
     
     @objc func calculateSalary() {
-        if let buttonDelegate = delegate {
-            buttonDelegate.didCalculate(id: FormID.submit.rawValue)
-        }
-    }
+             delegate?.didCalculate(id: FormID.submit.rawValue)
+     }
     
     
     init(id: String) {

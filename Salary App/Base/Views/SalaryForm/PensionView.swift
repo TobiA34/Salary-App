@@ -7,10 +7,8 @@
 
 import UIKit
 
- 
 class PensionView: UIView {
-    
-    weak var delegate: FormInputDelegate!
+    weak var delegate: FormInputDelegate?
     private var id: String
 
     private lazy var pensionStackView: UIStackView = {
@@ -24,15 +22,13 @@ class PensionView: UIView {
         stackView.spacing = 16
         return stackView
     }()
-    
     private lazy var pensionLbl: UILabel = {
-        let SalaryDescdLbl = UILabel()
-        SalaryDescdLbl.textColor = .black
-        SalaryDescdLbl.text = "Enter pension contribution"
-        SalaryDescdLbl.translatesAutoresizingMaskIntoConstraints = false
-        return SalaryDescdLbl
+        let salaryDescdLbl = UILabel()
+        salaryDescdLbl.textColor = .black
+        salaryDescdLbl.text = "Enter pension contribution"
+        salaryDescdLbl.translatesAutoresizingMaskIntoConstraints = false
+        return salaryDescdLbl
     }()
-    
     private lazy var pensionTextField: UITextField = {
         let textField = UITextField()
         textField.layer.borderWidth = 1
@@ -54,9 +50,8 @@ class PensionView: UIView {
     }
     
    @objc func enterPension() {
-       if let pensionInput = pensionTextField.text,
-          let pensionDelegate = delegate {
-           pensionDelegate.didEnter(id: id, input: pensionInput)
+       if let pensionInput = pensionTextField.text {
+         delegate?.didEnter(id: id, input: pensionInput)
        }
        
     }

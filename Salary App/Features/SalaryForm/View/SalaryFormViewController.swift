@@ -63,7 +63,11 @@ class SalaryFormViewController: UIViewController {
     let salaryvm: SalaryFormViewModel!
     
     init() {
-        self.salaryvm = SalaryFormViewModel(taxCalculator: taxCalculator, niCalculator: niCalculator, studentLoanCalculator: studentLoanCalulator, pensionContributionCalculator: pensionCalculator, studentLoanPlan: studentLoanPlan)
+        self.salaryvm = SalaryFormViewModel(taxCalculator: taxCalculator,
+                                            niCalculator: niCalculator,
+                                            studentLoanCalculator: studentLoanCalulator,
+                                            pensionContributionCalculator: pensionCalculator,
+                                            studentLoanPlan: studentLoanPlan)
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -183,7 +187,15 @@ extension SalaryFormViewController: ButtonViewDelegate {
                 let ni = niCalculator.calculate(salary: salaryValue)
                 let studentLoan = studentLoanCalulator.calculate(salary: salaryValue,studentLoanPlan: StudentLoanPlan(rawValue: formInput.studentLoan ) ?? StudentLoanPlan.planOne)
                 
-                let sheetViewController = SalaryBreakDownViewController(salaryBreakdown: SalaryBreakdown(monthlySalary: monthlySalary, dailySalary: dailySalary, hourlySalary: hourlySalary, weeklySalary: weeklySalary, tax: tax, ni: ni, studentLoan: studentLoan, originalSalary: salaryValue))
+                let sheetViewController = SalaryBreakDownViewController(salaryBreakdown: SalaryBreakdown(
+                    monthlySalary: monthlySalary,
+                    dailySalary: dailySalary,
+                    hourlySalary: hourlySalary,
+                    weeklySalary: weeklySalary,
+                    tax: tax,
+                    ni: ni,
+                    studentLoan: studentLoan,
+                    originalSalary: salaryValue))
                 
                 navigationController?.pushViewController(sheetViewController, animated: true)
                 

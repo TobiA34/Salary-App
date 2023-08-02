@@ -33,7 +33,7 @@ class AccordionView: UIView {
         iconButton.translatesAutoresizingMaskIntoConstraints = false
         iconButton.setTitle("Closed ▲", for: .normal)
         iconButton.setTitleColor(.black, for: .normal)
-        iconButton.addTarget(self, action: #selector(touchHappen), for: .touchUpInside)
+        iconButton.addTarget(self, action: #selector(didTouchToggleIcon), for: .touchUpInside)
         iconButton.tintColor = .black
         return iconButton
     }()
@@ -66,7 +66,6 @@ class AccordionView: UIView {
     
     private lazy var monthlyStackView: SalaryHorizontalStackView = {
         let stackView = SalaryHorizontalStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
     private lazy var salaryMonthlyLbl: UILabel = {
@@ -78,7 +77,6 @@ class AccordionView: UIView {
     
     private lazy var yearlyStackView: SalaryHorizontalStackView = {
         let stackView = SalaryHorizontalStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
     private lazy var salaryYearlyLbl: UILabel = {
@@ -90,7 +88,6 @@ class AccordionView: UIView {
     
     private lazy var dailyStackView: SalaryHorizontalStackView = {
         let stackView = SalaryHorizontalStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
     private lazy var salaryDailyLbl: UILabel = {
@@ -102,7 +99,6 @@ class AccordionView: UIView {
     
     private lazy var weeklyStackView: SalaryHorizontalStackView = {
         let stackView = SalaryHorizontalStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
     private lazy var salaryWeeklyLbl: UILabel = {
@@ -115,7 +111,6 @@ class AccordionView: UIView {
     
     private lazy var hourlyStackView: SalaryHorizontalStackView = {
         let stackView = SalaryHorizontalStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
     private lazy var salaryHourlyLbl: UILabel = {
@@ -128,7 +123,6 @@ class AccordionView: UIView {
     
     private lazy var taxStackView: SalaryHorizontalStackView = {
         let stackView = SalaryHorizontalStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
     private lazy var taxLbl: UILabel = {
@@ -141,7 +135,6 @@ class AccordionView: UIView {
     
     private lazy var niStackView: SalaryHorizontalStackView = {
         let stackView = SalaryHorizontalStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
     private lazy var niLbl: UILabel = {
@@ -153,7 +146,6 @@ class AccordionView: UIView {
     
     private lazy var studentLoanStackView: SalaryHorizontalStackView = {
         let stackView = SalaryHorizontalStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
     
@@ -168,7 +160,6 @@ class AccordionView: UIView {
     
     private lazy var originalStackView: SalaryHorizontalStackView = {
         let stackView = SalaryHorizontalStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
     private lazy var originalSalaryLbl: UILabel = {
@@ -214,7 +205,7 @@ class AccordionView: UIView {
         }
     }
     
-    @objc func touchHappen() {
+    @objc func didTouchToggleIcon() {
         UIView.animate(withDuration: 0.7) {
             self.myViewHeightConstraint.constant = -self.scrollView.frame.size.height + 180
             self.layoutIfNeeded()

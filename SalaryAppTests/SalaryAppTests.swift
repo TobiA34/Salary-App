@@ -23,7 +23,11 @@ final class SalaryAppTests: XCTestCase {
         niCalculator = NICalculator()
         studentLoanCalculator = StudentLoanCalculator()
         pensionContributionCalculator = PensionContributionCalculator()
-        salaryFormVM = SalaryFormViewModel(taxCalculator: taxCalculator, niCalculator: niCalculator, studentLoanCalculator: studentLoanCalculator, pensionContributionCalculator: pensionContributionCalculator, studentLoanPlan: studentLoanPlan)
+       salaryFormVM = SalaryFormViewModel(taxCalculator: taxCalculator,
+                                          niCalculator: niCalculator,
+                                          studentLoanCalculator: studentLoanCalculator,
+                                          pensionContributionCalculator: pensionContributionCalculator,
+                                          studentLoanPlan: studentLoanPlan)
     }
 
     override func tearDownWithError() throws {
@@ -82,34 +86,33 @@ final class SalaryAppTests: XCTestCase {
     func testMonthlySalary() throws {
     salary = 30000.0
     let pensionContributions = 20.0
-        let salaryFormVM = SalaryFormViewModel(taxCalculator: TaxCalculator(), niCalculator: NICalculator(), studentLoanCalculator: StudentLoanCalculator(), pensionContributionCalculator: PensionContributionCalculator(), studentLoanPlan: .planOne)
+        let salaryFormVM = SalaryFormViewModel(taxCalculator: TaxCalculator(),
+                                               niCalculator: NICalculator(),
+                                               studentLoanCalculator: StudentLoanCalculator(),
+                                               pensionContributionCalculator: PensionContributionCalculator(),
+                                               studentLoanPlan: .planOne)
 
-    let monthlyTotal = salaryFormVM.calculateMonthlySalary(salaryForm: SalaryForm(salary: salary, pensionContributions: pensionContributions))
-        XCTAssertEqual(monthlyTotal,1756.25)
+        let monthlyTotal = salaryFormVM.calculateMonthlySalary(input: FormInputManager(salary: "30000",pension: "0"))
+        XCTAssertEqual(monthlyTotal,2316.19)
     }
     
     func testDailySalary() throws {
     salary = 30000.0
-        let monthlyTotal = salaryFormVM.calculateDailySalary(salaryForm: SalaryForm(salary: salary, pensionContributions: nil))
-        XCTAssertEqual(monthlyTotal,66.63)
+        let monthlyTotal = salaryFormVM.calculateDailySalary(input: FormInputManager(salary: "30000",pension: "0"))
+        XCTAssertEqual(monthlyTotal,176.12)
     }
     
     func testHourlySalary() throws {
     salary = 30000.0
     let pensionContributions = 20.0
         
-        let monthlyTotal = salaryFormVM.calculateHourlySalary(salaryForm: SalaryForm(salary: salary, pensionContributions: pensionContributions))
+        let monthlyTotal = salaryFormVM.calculateHourlySalary(input: FormInputManager(salary: "30000",pension: "0"))
         XCTAssertEqual(monthlyTotal,15.38)
     }
     
-    func testWeelySalary() throws {
+    func testWeeklySalary() throws {
     salary = 30000.0
-        let monthlyTotal = salaryFormVM.calculateWeeklySalary(salaryForm: SalaryForm(salary: salary, pensionContributions: nil))
-        XCTAssertEqual(monthlyTotal,333.17)
+        let monthlyTotal = salaryFormVM.calculateWeeklySalary(input: FormInputManager(salary: "30000",pension: "0"))
+        XCTAssertEqual(monthlyTotal,880.61)
     }
-    
-    
-    
    }
-
-

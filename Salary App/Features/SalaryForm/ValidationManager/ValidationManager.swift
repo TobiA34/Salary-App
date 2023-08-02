@@ -7,22 +7,18 @@
 
 import Foundation
 
-
 struct FormInputValidation {
     let salary: String
     let pension: String?
     let minimumSalary: Double
-
 }
 
-enum FormError: Error,LocalizedError {
+enum FormError: Error, LocalizedError {
     case salaryContainsEmptyString
     case pensionContainsEmptyString
     case salaryFormContainsLetters
     case pensionFormContainsLetters
     case salaryIsBelowMin
-
-    
     var errorTitle: String? {
         switch self {
         case .salaryContainsEmptyString:
@@ -35,10 +31,8 @@ enum FormError: Error,LocalizedError {
             return "Pension textField contains letters"
         case .salaryIsBelowMin:
             return "Salary is below the minimum salary"
-
         }
     }
-    
     var errorDescription: String {
         switch self {
         case .salaryContainsEmptyString:
@@ -53,7 +47,6 @@ enum FormError: Error,LocalizedError {
             return "This salary is below the minimum salary £12,000 , please enter a valid salary"
         }
     }
-    
 }
 
 struct ValidationManager {
@@ -64,19 +57,15 @@ struct ValidationManager {
     func isValid(input: FormInputValidation) throws {
         let salarySet = CharacterSet(charactersIn: input.salary)
         let pensionSet = CharacterSet(charactersIn: input.pension ?? "")
-        
         if input.salary.isEmpty {
             throw FormError.salaryContainsEmptyString
         } else if !CharacterSet.decimalDigits.isSuperset(of: salarySet) {
             throw FormError.salaryFormContainsLetters
         }
         else if !CharacterSet.decimalDigits.isSuperset(of: pensionSet) {
-                 throw FormError.pensionFormContainsLetters
-            } else if input.minimumSalary < 12000 {
-                throw FormError.salaryIsBelowMin
-                
-            }
+            throw FormError.pensionFormContainsLetters
+        } else if input.minimumSalary < 12000 {
+            throw FormError.salaryIsBelowMin
         }
-        
     }
-
+}

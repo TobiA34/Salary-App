@@ -10,7 +10,7 @@ import UIKit
 
 class StudentLoanView: UIView {
     
-   weak var delegate: StudentLoanViewDelegate!
+   weak var delegate: StudentLoanViewDelegate?
  
    private let studentLoanPlans = [StudentLoanPlan.planOne.rawValue,
                 StudentLoanPlan.planTwo.rawValue,
@@ -19,7 +19,6 @@ class StudentLoanView: UIView {
                 StudentLoanPlan.postgraduateLoan.rawValue
     ]
     
-    private let salaryTypeTextField = UITextField()
     private var id: String
     
     private lazy var studentLoanStackView: UIStackView = {
@@ -56,7 +55,17 @@ class StudentLoanView: UIView {
         return taxCodeLbl
     }()
     
-    let pickerView = UIPickerView()
+    private lazy var pickerView: UIPickerView = {
+        let pickerView = UIPickerView()
+        pickerView.translatesAutoresizingMaskIntoConstraints = false
+        return pickerView
+    }()
+    
+    private lazy var salaryTypeTextField: UITextField = {
+        let salaryTypeTextField = UITextField()
+        salaryTypeTextField.translatesAutoresizingMaskIntoConstraints = false
+        return salaryTypeTextField
+    }()
 
     
     init(id: String) {
@@ -68,7 +77,7 @@ class StudentLoanView: UIView {
     @objc func studentPickerDidChange() {
         
         if let studentLoanInput = studentLoanTextField.text {
-            delegate.didSelect(id: FormID.studentLoan.rawValue, input: studentLoanInput)
+            delegate?.didSelect(id: FormID.studentLoan.rawValue, input: studentLoanInput)
         }
     }
     

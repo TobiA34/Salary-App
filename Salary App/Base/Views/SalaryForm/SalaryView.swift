@@ -9,7 +9,7 @@ import UIKit
 
 class SalaryView: UIView {
     
-    weak var delegate: FormInputDelegate!
+    weak var delegate: FormInputDelegate?
     private var id: String
  
     private lazy var salaryTextFieldStackView: UIStackView = {
@@ -25,11 +25,11 @@ class SalaryView: UIView {
     }()
     
     private lazy var salaryTextFieldLbl: UILabel = {
-        let SalaryTextFieldLbl = UILabel()
-        SalaryTextFieldLbl.textColor = .black
-        SalaryTextFieldLbl.text = "Enter Salary"
-        SalaryTextFieldLbl.translatesAutoresizingMaskIntoConstraints = false
-        return SalaryTextFieldLbl
+        let salaryTextFieldLbl = UILabel()
+        salaryTextFieldLbl.textColor = .black
+        salaryTextFieldLbl.text = "Enter Salary"
+        salaryTextFieldLbl.translatesAutoresizingMaskIntoConstraints = false
+        return salaryTextFieldLbl
     }()
     
     
@@ -60,22 +60,17 @@ class SalaryView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
-    
+
     @objc func dismissKeyboard() {
         self.endEditing(true)
       }
     
     @objc func enterSalary() {
-         if let salaryInput = salaryTextField.text,
-            let salaryDelegate = delegate {
-            salaryDelegate.didEnter(id: id, input: salaryInput)
-
+         if let salaryInput = salaryTextField.text{
+            delegate?.didEnter(id: id, input: salaryInput)
         }
     }
 }
-
 
 extension SalaryView {
     func setup() {
