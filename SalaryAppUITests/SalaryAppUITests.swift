@@ -34,8 +34,7 @@ final class SalaryAppUITests: XCTestCase {
         salaryTextField.typeText("540000")
         sleep(5)
         
-        //Test should fail
-        XCTAssertEqual(salaryTextField.value as! String, "340000")
+        XCTAssertEqual(salaryTextField.value as? String, "340000")
         
     }
     
@@ -49,7 +48,7 @@ final class SalaryAppUITests: XCTestCase {
         let salaryTextField = app.textFields["salaryTextField"]
         salaryTextField.tap()
         salaryTextField.typeText("540000")
-        XCTAssertEqual(salaryTextField.value as! String, "540000")
+        XCTAssertEqual(salaryTextField.value as? String, "540000")
     }
     
     func testTextFieldShouldExist() throws {

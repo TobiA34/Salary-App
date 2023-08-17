@@ -16,7 +16,6 @@ struct TaxCalculator {
     /// - Returns: Final calculated tax
     func calculate(salary: Double) -> Double {
         if salary <= 12570 {
-          //Monthly Tax = (Annual Salary * Tax Rate) / 12
             return (salary * 0) / 12
         } else if salary >= 12571 && salary <= 50270 {
             let basicRate = (salary * 0.2) / 12
@@ -26,6 +25,7 @@ struct TaxCalculator {
             return floor(higherRate * 10) / 10
         } else {
             return  (salary * 4.5) / 12
+            
         }
     }
 }

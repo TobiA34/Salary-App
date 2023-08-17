@@ -7,17 +7,24 @@
 
 import Foundation
 
-struct NICalaculator {
+struct NICalculator {
     
     /// Calculate user ni based on salary
     /// - Parameters:
     ///   - salary: User salary as a decimal representation
     /// - Returns: Final calculated ni
-    func calculate(salary: Double) -> Double {
-       // £9,568 represents the primary threshold
-        let ni = salary - 9568
-        let total = (ni * 0.12)/12
-        let result = floor(total*100)/100
+    func calculate(salary: Double) -> Double {    
+        var result = 0.0
+ 
+        if salary >= 1048 && salary <= 4189 {
+          result = (salary / 12) * 0.1325
+        } else if salary < 6725 {
+          result = 0.0
+        } else if salary >= 9880 && salary <= 50270 {
+            result = (salary / 12) * 0.1025
+        } else {
+            result = (salary / 12) * 0.0325
+        }
         return result
     }
 }
